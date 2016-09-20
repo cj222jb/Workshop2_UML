@@ -9,8 +9,8 @@ public class MainProgram {
 
     public static void main(String[]args){
 
-        Boat newBoat = new Boat("Anton",10,10);
-        System.out.println(newBoat.id);
+
+
     }
 
 }
