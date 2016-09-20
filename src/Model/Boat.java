@@ -14,7 +14,8 @@ public class Boat {
         this.id=id;
         this.length=length;
     }
-
-
-
+    public void deleteBoat(int boatID){
+    }
+    public void changeBoat(){
+    }
 }
