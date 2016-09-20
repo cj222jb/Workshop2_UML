@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 /**
  * Created by user on 2016-09-20.
  */
@@ -8,7 +10,9 @@ public class Member {
     public int personalNum;
     public int memberID;
     Log log = new Log();
-    public Member[] memArr= new Member[10];
+   // public Member[] memArr= new Member[10];
+
+    ArrayList<Member> list = new ArrayList<>();
 
     public Member(){
 
@@ -25,10 +29,9 @@ public class Member {
     }
     public void addMem(String name, int personalNum, int memberID){
         Member newMem = new Member(name, personalNum, memberID);
-        memArr[1] = newMem;
+        list.add(newMem);
     }
     public Member getMem(int index){
-
-        return memArr[index];
+        return list.get(index);
     }
 }
