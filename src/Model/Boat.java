@@ -14,7 +14,13 @@ public class Boat {
         this.id=id;
         this.length=length;
     }
+
+    public void addBoat(){
+        Boat newBoat = new Boat("Anton",10,10);
+    }
+
     public void deleteBoat(int boatID){
+
     }
     public void changeBoat(){
     }
