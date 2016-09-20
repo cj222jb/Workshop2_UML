@@ -8,6 +8,8 @@ public class Member {
     public int personalNum;
     public int memberID;
     Log log = new Log();
+    public Member[] memArr= new Member[10];
+
     public Member(){
 
     }
@@ -23,7 +25,10 @@ public class Member {
     }
     public void addMem(String name, int personalNum, int memberID){
         Member newMem = new Member(name, personalNum, memberID);
-        log.member(newMem);
+        memArr[1] = newMem;
     }
+    public Member getMem(int index){
 
+        return memArr[index];
+    }
 }
