@@ -5,7 +5,7 @@ public class MainProgram {
     static Member mem = new Member();
 
     public static void main(String[] args){
-        mem.addMem("Lindmark", 951001, 1);
+        mem.addMem("Lindmark", 951001, 0);
 
         System.out.println(mem.getMem(0).personalNum);
     }

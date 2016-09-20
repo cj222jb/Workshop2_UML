@@ -10,8 +10,6 @@ public class Member {
     public int personalNum;
     public int memberID;
     Log log = new Log();
-   // public Member[] memArr= new Member[10];
-
     ArrayList<Member> list = new ArrayList<>();
 
     public Member(){
@@ -25,7 +23,7 @@ public class Member {
 
 
     public void removeMem(int memberID){
-
+        list.remove(memberID);
     }
     public void addMem(String name, int personalNum, int memberID){
         Member newMem = new Member(name, personalNum, memberID);
