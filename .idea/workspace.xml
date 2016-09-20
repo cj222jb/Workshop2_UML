@@ -26,7 +26,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -36,7 +35,6 @@
                 <element signature="e#64#65#0" expanded="true" />
                 <element signature="e#114#115#0" expanded="true" />
               </folding>
-=======
       <file leaf-file-name="MainProgram.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/MainProgram.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,7 +61,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
->>>>>>> 683b992c56483cdb9712df1262315c1996fef4aa
             </state>
           </provider>
         </entry>
@@ -87,12 +84,9 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-=======
->>>>>>> 683b992c56483cdb9712df1262315c1996fef4aa
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -101,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Model/Boat.java" />
         <option value="$PROJECT_DIR$/src/View/MainProgram.java" />
       </list>
@@ -109,14 +102,12 @@
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsBuildToolPackageJson" detection-done="true" />
-=======
         <option value="$PROJECT_DIR$/src/Member.java" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
->>>>>>> d2b5842df45837e198074527aa21bbb7c0cce2bd
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -183,8 +174,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-<<<<<<< HEAD
-=======
             <PATH_ELEMENT>
               <option name="myItemId" value="View" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -203,14 +192,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-=======
->>>>>>> 683b992c56483cdb9712df1262315c1996fef4aa
->>>>>>> d2b5842df45837e198074527aa21bbb7c0cce2bd
           </PATH>
         </subPane>
       </pane>
@@ -265,7 +250,6 @@
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-<<<<<<< HEAD
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
@@ -286,7 +270,6 @@
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-=======
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
@@ -312,7 +295,6 @@
       <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
       <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
       <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
->>>>>>> 683b992c56483cdb9712df1262315c1996fef4aa
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -322,7 +304,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
-<<<<<<< HEAD
       <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
@@ -337,7 +318,6 @@
       <Profilers>
         <option name="GAPID_DISABLE_PCS" value="false" />
       </Profilers>
-=======
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
@@ -359,7 +339,6 @@
       <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
       <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
       <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
->>>>>>> 683b992c56483cdb9712df1262315c1996fef4aa
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -436,12 +415,9 @@
       <listeners />
       <method />
     </configuration>
-<<<<<<< HEAD
     <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
       <method />
     </configuration>
-=======
->>>>>>> 683b992c56483cdb9712df1262315c1996fef4aa
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="myFilePath" />
