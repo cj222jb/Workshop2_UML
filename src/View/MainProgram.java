@@ -1,16 +1,16 @@
 package View;
 
 import Model.Boat;
+import Model.Member;
+import Model.Log;
 
-/**
- * Created by user on 2016-09-20.
- */
+
 public class MainProgram {
-
+    static Member mem = new Member();
+    static Log log = new Log();
     public static void main(String[]args){
 
-
-
+        mem.addMem("Lindmark", 951001, 1);
     }
 
 }
