@@ -7,7 +7,6 @@ public class Console {
 
 
 
-    public void addMem(){
-    }
+
 
 }
