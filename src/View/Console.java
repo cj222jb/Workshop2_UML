@@ -40,7 +40,6 @@ public class Console {
 
                 System.out.println("Enter personal number");
                 int pnumber = scanner.nextInt();
-
                 System.out.println("Enter ID of member");
                 int memberID = scanner.nextInt();
 
@@ -51,6 +50,13 @@ public class Console {
         }
     }
 
+    public void changeMem(int memberID) {
+        System.out.println("Change information about member");
+        Scanner scan = new Scanner(System.in);
+        String name = scan.nextLine();
+        int personalNum = scan.nextInt();
+        mem.changeMem(name, personalNum, memberID); //Sends to model method changeMem
+    }
     public static void printInfo(){
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("If you want to print a boat press b , for member press m");
@@ -70,5 +76,5 @@ public class Console {
                     " Member Personal Number : "+ mem.getMem(printID2).personalNum);
         }
     }
-    }
 
+    }
