@@ -50,12 +50,12 @@ public class Member {
     }
 
 
-        public boolean containsMember ( int memberID){ //check if Hashmap contains memberID
-            if (memList.get(memberID) == null)
-                return false;
-            else return true;
+    public boolean containsMember ( int memberID){ //check if Hashmap contains memberID
+        if (memList.get(memberID) == null)
+            return false;
+        else return true;
 
-        }
+    }
 
 
     public void changeMem(String name, int personalNum, int memberID) { //Removes old member information and replace with new
