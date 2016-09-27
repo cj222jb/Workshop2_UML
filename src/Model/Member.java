@@ -9,8 +9,8 @@ public class Member {
     public String name;
     public int personalNum;
     public int memberID;
-    HashMap<Integer, Member> memList = new HashMap<Integer, Member>();
     Log log = new Log();
+    HashMap<Integer, Member> memList = new HashMap<Integer, Member>();
 
 
     public Member() {
@@ -35,6 +35,7 @@ public class Member {
         Member newMem = new Member(name, personalNum, memberID);
         if (!containsMember(memberID)) {
             memList.put(memberID, newMem);
+            log.logMem(newMem,memberID);
             return true;
         } else {
             System.err.println("MemberID already exist");
@@ -43,17 +44,18 @@ public class Member {
     }
 
     public Member getMem(int memberID) { //Returns member from hashmap
-        return memList.get(memberID);
-
+        if(containsMember(memberID))
+            return memList.get(memberID);
+        else return null;
     }
 
 
-        public boolean containsMember ( int memberID){ //check if Hashmap contains memberID
-            if (memList.get(memberID) == null)
-                return false;
-            else return true;
+    public boolean containsMember ( int memberID){ //check if Hashmap contains memberID
+        if (memList.get(memberID) == null)
+            return false;
+        else return true;
 
-        }
+    }
 
 
     public void changeMem(String name, int personalNum, int memberID) { //Removes old member information and replace with new
