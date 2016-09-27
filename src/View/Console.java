@@ -18,8 +18,9 @@ public class Console {
         while(true) { // to try endlessly
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("If you want to add a boat press b , if you want to add register yourself press r,"+ "\n"+" if you want to print a specific member or boat," +
-                    " press any p");
+            System.out.println("If you want to add a boat press b , " + "\n" + " if you want to add register yourself as a new member press m,"+ "\n"+"" +
+                    " if you want to print a specific member or boat," +
+                    " press p" + "\n" + "if you want to change a member , press c ");
             String choice = scanner.nextLine();
 
             if (choice.equals("b")) {
@@ -47,16 +48,51 @@ public class Console {
             } else if (choice.equals("p")) {
                 printInfo();
             }
+            else if(choice.equals("c")){
+
+                System.out.println("b for boat, m for member: ");
+                Scanner scan1 = new Scanner(System.in);
+                String choice2=scan1.nextLine();
+
+                if(choice2.equals("b")) {
+                    System.out.println("Enter boat id : ");
+                    Scanner scan = new Scanner(System.in);
+                    int id = scan.nextInt();
+                    changeBoat(id);
+                }
+                else if(choice2.equals("m")){
+
+                    System.out.println("Enter member id : ");
+                    Scanner scan = new Scanner(System.in);
+                    int id = scan.nextInt();
+                    changeMem(id);
+                }
+
+            }
         }
     }
 
-    public void changeMem(int memberID) {
+    public static void changeMem(int memberID) {
         System.out.println("Change information about member");
         Scanner scan = new Scanner(System.in);
+        System.out.println("Enter your name:");
         String name = scan.nextLine();
+        System.out.println("Enter your personal number:");
         int personalNum = scan.nextInt();
         mem.changeMem(name, personalNum, memberID); //Sends to model method changeMem
     }
+    public static void changeBoat(int boatID) {
+        System.out.println("Change information about boat");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter your boattype:");
+        System.out.println();
+        String boattype = scan.nextLine();
+        System.out.println("Enter your boat length:");
+        int boatlength = scan.nextInt();
+        mem.changeMem(boattype, boatlength, boatID); //Sends to model method changeMem
+    }
+
+
     public static void printInfo(){
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("If you want to print a boat press b , for member press m");
@@ -77,4 +113,4 @@ public class Console {
         }
     }
 
-    }
+}

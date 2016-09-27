@@ -23,14 +23,12 @@ public class Member {
     }
 
 
-  /*  public boolean removeMem(int memberID){
-        list.remove(memberID);
 
     public boolean removeMem(int memberID){
         memList.remove(memberID);
 
         return true;
-    }*/
+    }
 
 
     public boolean addMem(String name, int personalNum, int memberID) {
@@ -59,7 +57,7 @@ public class Member {
 
 
     public void changeMem(String name, int personalNum, int memberID) { //Removes old member information and replace with new
-       // removeMem(memberID);
+       removeMem(memberID);
         addMem(name, personalNum, memberID);
     }
 }
