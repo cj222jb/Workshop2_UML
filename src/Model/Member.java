@@ -28,6 +28,7 @@ public class Member {
     public void addMem(String name, int personalNum, int memberID){
         Member newMem = new Member(name, personalNum, memberID);
         list.add(newMem);
+        log.logMem(newMem,memberID);
     }
     public Member getMem(int index){
         return list.get(index);

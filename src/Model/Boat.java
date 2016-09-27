@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -7,6 +8,7 @@ import java.util.ArrayList;
  */
 public class Boat {
 
+    static Log log = new Log();
     public String model;
     public int id;
     public int length;
@@ -22,9 +24,11 @@ public class Boat {
 
     }
 
-    public void addBoat(String model, int length, int id){
-        Boat newBoat = new Boat(model,length,id);
+    public void addBoat(String model, int id, int length){
+        Boat newBoat = new Boat(model,id,length);
         blist.add(newBoat);
+        log.logboat(newBoat,id);
+
     }
 
     public Boat getBoat(int index){
