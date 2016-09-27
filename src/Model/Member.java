@@ -22,23 +22,37 @@ public class Member {
     }
 
     public boolean removeMem(int memberID){
-        list.remove(memberID);
+        memList.remove(memberID);
         return true;
     }
 
 
-    public void addMem(String name, int personalNum, int memberID){
+    public boolean addMem(String name, int personalNum, int memberID){
         Member newMem = new Member(name, personalNum, memberID);
-        memList.put(memberID, newMem);
+        if(!containsMember(memberID)) {
+            memList.put(memberID, newMem);
+            return true;
+        }
+        else {
+            System.err.println("MemberID already exist");
+            return false;
+        }
     }
 
-    public Member getMem(int memberID){
-
+    public Member getMem(int memberID){ //Returns member from hashmap
         return memList.get(memberID);
+
     }
 
-    public void changeMem(String name, int personalNum, int index){
-        removeMem(index);
+    public boolean containsMember(int memberID){ //check if Hashmap contains memberID
+        if(memList.get(memberID) == null)
+            return false;
+        else return true;
 
+    }
+
+    public void changeMem(String name, int personalNum, int memberID){ //Removes old member information and replace with new
+        removeMem(memberID);
+        addMem(name, personalNum, memberID);
     }
 }

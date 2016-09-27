@@ -21,13 +21,13 @@ public class Console {
 
 
 
-/*
-    public void changeMem(int index){
+
+    public void changeMem(int memberID){
         System.out.println("Change information about member");
         Scanner scan = new Scanner(System.in);
-
-        mem.changeMem(index);
+        String name = scan.nextLine();
+        int personalNum = scan.nextInt();
+        mem.changeMem(name, personalNum ,memberID); //Sends to model method changeMem
 
     }
-    */
 }
