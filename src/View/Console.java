@@ -18,7 +18,7 @@ public class Console {
         while(true) { // to try endlessly
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("If you want to add a boat press b , if you want to add register yourself press r, if you want to print a specific member or boat," +
+            System.out.println("If you want to add a boat press b , if you want to add register yourself press r,"+ "\n"+" if you want to print a specific member or boat," +
                     " press any p");
             String choice = scanner.nextLine();
 
