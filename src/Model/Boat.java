@@ -25,9 +25,12 @@ public class Boat {
     public void addBoat(String model, int length, int id){
         Boat newBoat = new Boat(model,length,id);
         blist.add(newBoat);
+
     }
 
     public Boat getBoat(int index){
+
+
         return blist.get(index);
     }
 
