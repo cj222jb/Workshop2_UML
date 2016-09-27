@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -8,6 +9,7 @@ import java.util.HashMap;
  */
 public class Boat {
 
+    static Log log = new Log();
     public String model;
     public int id;
     public int length;
@@ -27,6 +29,7 @@ public class Boat {
         Boat newBoat = new Boat(model,length,boatID);
         if(!containsBoat(boatID)){
             boatList.put(boatID, newBoat);
+            log.logboat(newBoat,boatID);
             return true;
         }
         else {
@@ -40,6 +43,7 @@ public class Boat {
         if(containsBoat(boatID))
             return boatList.get(boatID);
         else return null;
+
     }
 
     public boolean containsBoat(int boatID){

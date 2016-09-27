@@ -9,6 +9,7 @@ public class Member {
     public String name;
     public int personalNum;
     public int memberID;
+    Log log = new Log();
     HashMap<Integer, Member> memList = new HashMap<Integer, Member>();
 
 
@@ -34,6 +35,7 @@ public class Member {
         Member newMem = new Member(name, personalNum, memberID);
         if (!containsMember(memberID)) {
             memList.put(memberID, newMem);
+            log.logMem(newMem,memberID);
             return true;
         } else {
             System.err.println("MemberID already exist");
