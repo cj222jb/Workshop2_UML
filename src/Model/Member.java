@@ -10,7 +10,6 @@ public class Member {
     public int personalNum;
     public int memberID;
     HashMap<Integer, Member> memList = new HashMap<Integer, Member>();
-    Log log = new Log();
 
 
     public Member() {
@@ -43,8 +42,9 @@ public class Member {
     }
 
     public Member getMem(int memberID) { //Returns member from hashmap
-        return memList.get(memberID);
-
+        if(containsMember(memberID))
+            return memList.get(memberID);
+        else return null;
     }
 
 
