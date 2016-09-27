@@ -59,7 +59,7 @@ public class Member {
 
 
     public void changeMem(String name, int personalNum, int memberID) { //Removes old member information and replace with new
-        removeMem(memberID);
+       // removeMem(memberID);
         addMem(name, personalNum, memberID);
     }
 }
