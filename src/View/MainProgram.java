@@ -8,13 +8,12 @@ public class MainProgram {
 
     public static void main(String[] args){
 
-        mem.addMem("Lindmark", 951001, 0);
+        mem.addMem("Lindmark", 951001, 12);
 
 
-        mem.addMem("Lindmark", 951001, 45);
         b.addBoat("Motorbåt",1,54);
 
-        System.out.println(mem.getMem(0).personalNum);
-        System.out.println(b.getBoat(0).model);
+        System.out.println(mem.getMem(12).personalNum);
+        System.out.println(mem.getMem(12).name);
     }
 }
