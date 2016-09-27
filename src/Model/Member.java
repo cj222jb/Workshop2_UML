@@ -9,11 +9,9 @@ public class Member {
     public String name;
     public int personalNum;
     public int memberID;
-<<<<<<< HEAD
-    Log log = new Log();
-=======
 
->>>>>>> 2cf4ee598d063dd803f1bb598c52f5ffa9f8750c
+    Log log = new Log();
+
     ArrayList<Member> list = new ArrayList<>();
 
     public Member(){
