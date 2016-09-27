@@ -9,13 +9,12 @@ public class Member {
     public String name;
     public int personalNum;
     public int memberID;
+
     Log log = new Log();
-   // public Member[] memArr= new Member[10];
 
     ArrayList<Member> list = new ArrayList<>();
 
     public Member(){
-
     }
     public Member(String name, int personalNum, int memberID){
         this.memberID = memberID;
@@ -23,9 +22,8 @@ public class Member {
         this.personalNum = personalNum;
     }
 
-
     public void removeMem(int memberID){
-
+        list.remove(memberID);
     }
     public void addMem(String name, int personalNum, int memberID){
         Member newMem = new Member(name, personalNum, memberID);
