@@ -50,7 +50,8 @@ public class Boat {
     }
 
     public void deleteBoat(int boatID){
-        boatList.remove(boatID);
+        if(containsBoat(boatID))
+            boatList.remove(boatID);
 
     }
     public void changeBoat(){

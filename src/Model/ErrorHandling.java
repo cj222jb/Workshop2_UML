@@ -6,8 +6,10 @@ package Model;
 public class ErrorHandling {
 
     public boolean personalNumErr(int personalNum){
-
-        return true;
+        personalNum = String.valueOf(1000).length();
+        if(personalNum < 6)
+            return false;
+        else return true;
     }
 
 }
