@@ -18,9 +18,9 @@ public class Console {
         while(true) { // to try endlessly
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("If you want to add a boat press b , " + "\n" + " if you want to add register yourself as a new member press m,"+ "\n"+"" +
-                    " if you want to print a specific member or boat," +
-                    " press p" + "\n" + "if you want to change a member , press c ");
+            System.out.println("If you want to add a boat press b" + "\n" + "If you want to add register a new member press m,"+ "\n"+"" +
+                    "If you want to print a specific member or boat" +
+                    " press p" + "\n" + "If you want to change a member press c ");
             String choice = scanner.nextLine();
 
             if (choice.equals("b")) {
@@ -94,23 +94,11 @@ public class Console {
 
 
     public static void printInfo(){
-        Scanner scanner1 = new Scanner(System.in);
-        System.out.println("If you want to print a boat press b , for member press m");
-        String choice1 = scanner1.nextLine();
-
-        if(choice1.equals("b")) {
-            System.out.println("Enter your BoatID");
-            int printID = scanner1.nextInt();
-            System.out.println("Boat type: "+ b.getBoat(printID).model +" Boat Length : " +b.getBoat(printID).length +
-                    "Boat id : "+ b.getBoat(printID).id);
-            System.out.println("hej");
-        }
-        else if(choice1.equals("m")){
-            System.out.println("Enter your MemberID");
-            int printID2 = scanner1.nextInt();
-            System.out.println("Member ID: "+ mem.getMem(printID2).memberID +" Member name : " +mem.getMem(printID2).name +
-                    " Member Personal Number : "+ mem.getMem(printID2).personalNum);
-        }
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter your MemberID");
+        int printID2 = scan.nextInt();
+        System.out.println("Member ID: "+ mem.getMem(printID2).memberID +" Member name : " +mem.getMem(printID2).name +
+                " Member Personal Number : "+ mem.getMem(printID2).personalNum);
     }
-
 }
+
