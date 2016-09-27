@@ -9,6 +9,9 @@ import java.util.HashMap;
  */
 public class Boat {
 
+
+
+
     static Log log = new Log();
     public String model;
     public int id;
@@ -53,9 +56,10 @@ public class Boat {
 
     }
 
-    public void deleteBoat(int boatID){
+    public void removeBoat(int boatID){
         if(containsBoat(boatID))
             boatList.remove(boatID);
+            log.removeBoat(boatID);
 
     }
     public void changeBoat(){
