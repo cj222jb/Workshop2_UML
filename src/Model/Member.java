@@ -26,7 +26,7 @@ public class Member {
 
     public boolean removeMem(int memberID){
         memList.remove(memberID);
-
+        log.removeMember(memberID);
         return true;
     }
 
