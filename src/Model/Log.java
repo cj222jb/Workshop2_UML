@@ -2,6 +2,7 @@ package Model;
 
 import java.io.*;
 import java.io.File;
+import java.util.Scanner;
 
 /**
  * Created by carl on 2016-09-20.
@@ -19,11 +20,11 @@ public class Log {
 
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write("Boat ID: " + boat.id);
+            writer.write(boat.id);
             writer.newLine();
-            writer.write("Boat Length: : " + boat.length);
+            writer.write(boat.length);
             writer.newLine();
-            writer.write("Boat Model: : " + boat.model);
+            writer.write(boat.model);
 
 
         } catch (FileNotFoundException e) {
@@ -44,7 +45,8 @@ public class Log {
 
 
     public void logMem(Member mem, int id) {
-
+        String ID = ""+id;
+        File hue = new File(ID);
         String filename = "Member_" + id + ".txt";
         BufferedWriter writer = null;
 
@@ -100,6 +102,20 @@ public class Log {
         return remov;
 
 
+    }
+
+    public String getMem(int memberID){
+        String fileContent ="";
+        try (Scanner scan = new Scanner(new FileReader("Member_"+memberID))) {
+            while(scan.hasNextLine()) {
+                fileContent = scan.nextLine();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        return fileContent;
     }
 
 }
