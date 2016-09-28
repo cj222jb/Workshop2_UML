@@ -1,0 +1,3 @@
+Member ID: 123
+Member Personal Number: 941024
+Member Name: Fredrik
