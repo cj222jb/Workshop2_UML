@@ -19,7 +19,7 @@ public class Boat {
     HashMap<Integer, Boat> boatList = new HashMap<Integer, Boat>();
 
 
-    public Boat(String model,int id,int length){
+    public Boat(String model,int length,int id){
         this.model=model;
         this.id=id;
         this.length=length;
@@ -28,17 +28,10 @@ public class Boat {
 
     }
 
-    public boolean addBoat(String model, int length, int boatID){
+    public void addBoat(String model, int length, int boatID){
         Boat newBoat = new Boat(model,length,boatID);
-        if(!containsBoat(boatID)){
             boatList.put(boatID, newBoat);
             log.logboat(newBoat,boatID);
-            return true;
-        }
-        else {
-            System.err.println("BoatID already exist");
-            return false;
-        }
 
     }
 
