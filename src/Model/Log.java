@@ -88,26 +88,25 @@ public class Log {
     }
 
 
-    public boolean removeBoat(int boatID) {
-
-        boolean rem = false;
-        File file = null;
-        file = new File("Boat_" + boatID + ".txt");
-
-        rem = file.delete();
+    public boolean removeBoat(int memID, int boatID) {
 
 
-        return rem;
+        String mapID = memID+"\\"+"Boat_"+boatID+".txt";
+        boolean remov = false;
+        File file = new File(mapID);
+
+        remov = file.delete();
+
+
+        return remov;
     }
 
     public boolean removeMember(int memID) {
 
+        String mapID = ""+memID;
         boolean remov = false;
-        File file = null;
-        file = new File("Member_" + memID + ".txt");
-
+        File file = new File(mapID);
         remov = file.delete();
-
 
         return remov;
 
@@ -116,7 +115,7 @@ public class Log {
 
     public String getMem(int memberID){
         String fileContent ="";
-        try (Scanner scan = new Scanner(new FileReader("Member_"+memberID))) {
+        try (Scanner scan = new Scanner(new FileReader(memberID+"\\"+"Member.txt"))) {
             while(scan.hasNextLine()) {
                 fileContent = scan.nextLine();
             }
