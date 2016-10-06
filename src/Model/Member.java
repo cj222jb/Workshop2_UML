@@ -28,28 +28,22 @@ public class Member {
 
 
     public boolean removeMem(int memberID){
-        memList.remove(memberID);
+        for(int i = 0; i < memList.size(); i++){
+            if(memList.get(i).memberID == memberID){
+                memList.remove(i);
+            }
+        }
+
         log.removeMember(memberID);
         return true;
     }
 
 
-    public boolean addMem(String name, int personalNum, int memberID) {
-
-        Member newMem = new Member(name, personalNum, memberID, null);
-        memList.add(newMem);
-
-        /*
-        if (!containsMember(memberID)) {
-            memList.put(memberID, newMem);
-            log.logMem(newMem,memberID);
-            return true;
-        } else {
-            System.err.println("MemberID already exist");
-            return false;
+    public void addMem(String name, int personalNum, int memberID) {
+        if(!containsMember(memberID)) {
+            Member newMem = new Member(name, personalNum, memberID, null);
+            memList.add(newMem);
         }
-        */
-        return true;
     }
 
     public Member getMem(int memberID) { //Returns member from hashmap
@@ -65,12 +59,12 @@ public class Member {
         return null;
     }
 
-
-    public boolean containsMember ( int memberID){ //check if Hashmap contains memberID
-        if (memList.get(memberID) == null)
-            return false;
-        else return true;
-
+    public boolean containsMember(int ID){
+        for(int i = 0; i < memList.size(); i ++){
+            if(memList.get(i).memberID == ID)
+                return true;
+        }
+        return false;
     }
 
 

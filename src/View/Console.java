@@ -16,7 +16,8 @@ public class Console {
     public static void userInterfaceBoat(){
 
         mem.addMem("Anton", 950110, 666);
-        mem.addMem("Hall", 040124, 999);
+        mem.getMem(666);
+        mem.addMem("Hall", 040124, 666);
         mem.getMem(666);
 /*
         while(true) { // to try endlessly
