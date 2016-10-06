@@ -26,7 +26,8 @@ public class Boat {
         return (list.get(boatID));
     }
 
-    public void removeBoat(int boatID){
+    public void removeBoat(int boatID) {
+
         list.remove(boatID);
     }
     public void changeBoat(){
