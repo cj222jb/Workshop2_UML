@@ -36,10 +36,11 @@ public class Member {
 
 
     public void addMem(String name, int personalNum, int memberID) {
-        if(!containsMember(memberID)) {
+        if (!containsMember(memberID)) {
             Member newMem = new Member(name, personalNum, memberID, null);
             memList.add(newMem);
         }
+    }
 
     public Member getMem(int memberID) { //Returns member from hashmap
 
