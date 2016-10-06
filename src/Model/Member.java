@@ -9,15 +9,17 @@ public class Member {
     public int memberID;
     Boat[] boatArr = new Boat[5];
 
-
+    public Member() {
+    }
     public Member(String name, int personalNum, int memberID) {
         this.memberID = memberID;
         this.name = name;
         this.personalNum = personalNum;
     }
 
-
-
+    public Boat[] getBoat(){
+        return boatArr;
+    }
     public void addBoat(String model,int length){
         Boat b = new Boat(model,length);
         for (int i = 0; i <5 ; i++) {
