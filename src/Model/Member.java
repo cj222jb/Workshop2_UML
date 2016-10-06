@@ -11,7 +11,6 @@ public class Member {
     public int memberID;
     Log log = new Log();
     Boat boat = new Boat();
-    //HashMap<Integer, Member> memList = new HashMap<Integer, Member>();
     ArrayList<Member> memList = new ArrayList<>();
 
 
@@ -24,9 +23,6 @@ public class Member {
         this.name = name;
         this.personalNum = personalNum;
     }
-
-
-
     public boolean removeMem(int memberID){
         for(int i = 0; i < memList.size(); i++){
             if(memList.get(i).memberID == memberID){
@@ -44,7 +40,6 @@ public class Member {
             Member newMem = new Member(name, personalNum, memberID, null);
             memList.add(newMem);
         }
-    }
 
     public Member getMem(int memberID) { //Returns member from hashmap
 
@@ -54,22 +49,19 @@ public class Member {
             }
             else return null;
         }
-
-
         return null;
     }
 
-    public boolean containsMember(int ID){
-        for(int i = 0; i < memList.size(); i ++){
-            if(memList.get(i).memberID == ID)
-                return true;
+        public boolean containsMember(int ID){
+            for (int i = 0; i < memList.size(); i++) {
+                if (memList.get(i).memberID == ID)
+                    return true;
+            }
+            return false;
         }
-        return false;
-    }
-
 
     public void changeMem(String name, int personalNum, int memberID) { //Removes old member information and replace with new
-       removeMem(memberID);
+        removeMem(memberID);
         addMem(name, personalNum, memberID);
     }
 }
