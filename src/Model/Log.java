@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class Log {
 
 
-    public void logboat(Boat boat, int id) {
+    public void logboat(Boat boat, int memID) {
         int nr = 1;
-        String mapID = ""+id;
+        String mapID = ""+memID;
         String filename = mapID+"\\"+"Boat_"+nr+".txt";
         BufferedWriter writer = null;
         File f = new File(filename);
@@ -101,16 +101,18 @@ public class Log {
         return remov;
     }
 
-    public boolean removeMember(int memID) {
+    public void removeMember(int memID) {
+
 
         String mapID = ""+memID;
-        boolean remov = false;
         File file = new File(mapID);
-        remov = file.delete();
 
-        return remov;
-
-
+        String[]entries = file.list();
+        for(String s: entries){
+            File currentFile = new File(file.getPath(),s);
+            currentFile.delete();
+        }
+        file.delete();
     }
 
     public String getMem(int memberID){
@@ -127,4 +129,57 @@ public class Log {
         return fileContent;
     }
 
+
+
+    public void changeMem(String name , int num, int id){
+
+        BufferedWriter writer = null;
+        String mapID = ""+id;
+        String filename = mapID+"\\"+"Member.txt";
+        File file = new File(filename);
+
+        file.delete();
+
+        File file2 = new File(filename);
+        try {
+            writer = new BufferedWriter(new FileWriter(file2));
+
+            writer.write("Member ID: " + id);
+            writer.newLine();
+            writer.write("Member Personal Number: " + num);
+            writer.newLine();
+            writer.write("Member Name: " + name);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void changeBoat(int memID,String model , int length, int boatID){
+
+        BufferedWriter writer = null;
+        String mapID = ""+memID;
+        String filename = mapID+"\\"+"Boat_"+boatID+".txt";
+        File file = new File(filename);
+        file.delete();
+
+
+        File file2 = new File(filename);
+        try {
+            writer = new BufferedWriter(new FileWriter(file2));
+
+            writer.write("Boat ID: " + boatID);
+            writer.newLine();
+            writer.write("Boat Length: : " + length);
+            writer.newLine();
+            writer.write("Boat Model: : " + model);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
+

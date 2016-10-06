@@ -14,6 +14,7 @@ public class Member {
     ArrayList<Member> memList = new ArrayList<>();
 
 
+
     public Member() {
     }
 
@@ -44,9 +45,14 @@ public class Member {
         */
         return true;
     }
-    public Member getMem(int memberID) {
+
+    public Member getMem(int memberID) { //Returns member from hashmap
 
         for(int i = 0; i < memList.size(); i++){
+            if(memList.get(i).memberID == memberID){
+                return memList.get(i);
+            }
+            else return null;
         }
         return null;
     }
@@ -57,7 +63,7 @@ public class Member {
 
     }
     public void changeMem(String name, int personalNum, int memberID) { //Removes old member information and replace with new
-       removeMem(memberID);
+        removeMem(memberID);
         addMem(name, personalNum, memberID);
     }
 }
