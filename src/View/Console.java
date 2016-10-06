@@ -24,10 +24,15 @@ public class Console {
         while(true) { // to try endlessly
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("If you want to add a boat press b" + "\n" + "If you want to add register a new member press m,"+ "\n"+"" +
-                    "If you want to print a specific member or boat" +
-                    " press p" + "\n" + "If you want to change a member press c ");
-            String choice = scanner.nextLine();
+    static Boat b = new Boat();
+    public static Member mem = new Member();
+
+    public static void userInterfaceBoat() {
+
+        mem.addBoat("eka", 23);
+
+
+
 
             if (choice.equals("b")) {
                 System.out.print("Enter Boat type:\t");
@@ -106,6 +111,7 @@ public class Console {
         int printID2 = scan.nextInt();
         System.out.println("Member ID: "+ mem.getMem(printID2).memberID +" Member name : " +mem.getMem(printID2).name +
                 " Member Personal Number : "+ mem.getMem(printID2).personalNum);
+
     }
     */
 }
