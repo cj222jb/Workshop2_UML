@@ -1,3 +1,0 @@
-Boat ID: 23
-Boat Length: : 99
-Boat Model: : eka

@@ -11,20 +11,26 @@ public class Log {
 
 
     public void logboat(Boat boat, int id) {
-
-        String filename = "Boat_" + id + ".txt";
+        int nr = 1;
+        String mapID = ""+id;
+        String filename = mapID+"\\"+"Boat_"+nr+".txt";
         BufferedWriter writer = null;
+        File f = new File(filename);
 
-
+        while (f.exists()) {
+            nr++;
+            filename = mapID+"\\"+"Boat_"+nr+".txt";
+            f = new File(filename);
+        }
         try {
 
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write(boat.id);
+            writer.write("Boat ID: " + boat.id);
             writer.newLine();
-            writer.write(boat.length);
+            writer.write("Boat Length: : " + boat.length);
             writer.newLine();
-            writer.write(boat.model);
+            writer.write("Boat Model: : " + boat.model);
 
 
         } catch (FileNotFoundException e) {
@@ -44,10 +50,14 @@ public class Log {
     }
 
 
+
     public void logMem(Member mem, int id) {
-        String ID = ""+id;
-        File hue = new File(ID);
-        String filename = "Member_" + id + ".txt";
+
+        String mapID = ""+id;
+        File map = new File(mapID);
+        map.mkdir();
+
+        String filename = mapID+"\\"+"Member.txt";
         BufferedWriter writer = null;
 
         try {
@@ -78,26 +88,25 @@ public class Log {
     }
 
 
-    public boolean removeBoat(int boatID) {
-
-        boolean rem = false;
-        File file = null;
-        file = new File("Boat_" + boatID + ".txt");
-
-        rem = file.delete();
+    public boolean removeBoat(int memID, int boatID) {
 
 
-        return rem;
+        String mapID = memID+"\\"+"Boat_"+boatID+".txt";
+        boolean remov = false;
+        File file = new File(mapID);
+
+        remov = file.delete();
+
+
+        return remov;
     }
 
     public boolean removeMember(int memID) {
 
+        String mapID = ""+memID;
         boolean remov = false;
-        File file = null;
-        file = new File("Member_" + memID + ".txt");
-
+        File file = new File(mapID);
         remov = file.delete();
-
 
         return remov;
 
@@ -106,7 +115,7 @@ public class Log {
 
     public String getMem(int memberID){
         String fileContent ="";
-        try (Scanner scan = new Scanner(new FileReader("Member_"+memberID))) {
+        try (Scanner scan = new Scanner(new FileReader(memberID+"\\"+"Member.txt"))) {
             while(scan.hasNextLine()) {
                 fileContent = scan.nextLine();
             }
