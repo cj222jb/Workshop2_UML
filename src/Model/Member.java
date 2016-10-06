@@ -1,6 +1,6 @@
 package Model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * Created by user on 2016-09-20.
@@ -10,13 +10,15 @@ public class Member {
     public int personalNum;
     public int memberID;
     Log log = new Log();
-    HashMap<Integer, Member> memList = new HashMap<Integer, Member>();
+    Boat boat = new Boat();
+    //HashMap<Integer, Member> memList = new HashMap<Integer, Member>();
+    ArrayList<Member> memList = new ArrayList<>();
 
 
     public Member() {
     }
 
-    public Member(String name, int personalNum, int memberID) {
+    public Member(String name, int personalNum, int memberID, Boat[] boat) {
         this.memberID = memberID;
         this.name = name;
         this.personalNum = personalNum;
@@ -32,7 +34,11 @@ public class Member {
 
 
     public boolean addMem(String name, int personalNum, int memberID) {
-        Member newMem = new Member(name, personalNum, memberID);
+
+        Member newMem = new Member(name, personalNum, memberID, null);
+        memList.add(newMem);
+
+        /*
         if (!containsMember(memberID)) {
             memList.put(memberID, newMem);
             log.logMem(newMem,memberID);
@@ -41,12 +47,19 @@ public class Member {
             System.err.println("MemberID already exist");
             return false;
         }
+        */
+        return true;
     }
 
     public Member getMem(int memberID) { //Returns member from hashmap
-        if(containsMember(memberID))
-            return memList.get(memberID);
-        else return null;
+        System.out.println(memList.indexOf("Anton"));
+        for(int i = 0; i < memList.size(); i++){
+            if(memList.indexOf(memberID) == memberID){
+                System.out.println(memList.indexOf(memberID));
+
+            }
+        }
+        return null;
     }
 
 

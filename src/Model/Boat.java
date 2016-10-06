@@ -52,7 +52,7 @@ public class Boat {
     public void removeBoat(int boatID){
         if(containsBoat(boatID))
             boatList.remove(boatID);
-            log.removeBoat(boatID);
+            //log.removeBoat(boatID);
 
     }
     public void changeBoat(){

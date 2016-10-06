@@ -15,6 +15,9 @@ public class Console {
 
     public static void userInterfaceBoat(){
 
+        mem.addMem("Anton", 950110, 666);
+        mem.getMem(666);
+/*
         while(true) { // to try endlessly
             Scanner scanner = new Scanner(System.in);
 
@@ -70,6 +73,7 @@ public class Console {
 
             }
         }
+        */
     }
 
     public static void changeMem(int memberID) {
