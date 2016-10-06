@@ -26,8 +26,6 @@ public class Log {
 
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write("Boat ID: " + boat.id);
-            writer.newLine();
             writer.write("Boat Length: : " + boat.length);
             writer.newLine();
             writer.write("Boat Model: : " + boat.model);
