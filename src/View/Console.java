@@ -12,9 +12,5 @@ import java.util.Scanner;
  */
 public class Console {
     public static ArrayList<Member> memArr = new ArrayList<>();
-    public static void userInterfaceBoat() {
-
-
-    }
 }
 
