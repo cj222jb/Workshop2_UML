@@ -15,6 +15,7 @@ public class Member {
     ArrayList<Member> memList = new ArrayList<>();
 
 
+
     public Member() {
     }
 
@@ -52,13 +53,15 @@ public class Member {
     }
 
     public Member getMem(int memberID) { //Returns member from hashmap
-        System.out.println(memList.indexOf("Anton"));
-        for(int i = 0; i < memList.size(); i++){
-            if(memList.indexOf(memberID) == memberID){
-                System.out.println(memList.indexOf(memberID));
 
+        for(int i = 0; i < memList.size(); i++){
+            if(memList.get(i).memberID == memberID){
+                return memList.get(i);
             }
+            else return null;
         }
+
+
         return null;
     }
 
