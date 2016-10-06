@@ -10,60 +10,23 @@ public class Member {
     public int personalNum;
     public int memberID;
     Log log = new Log();
-    Boat boat = new Boat();
-    ArrayList<Member> memList = new ArrayList<>();
+    static Boat boat = new Boat();
+    Boat[] boatArr = new Boat[5];
 
 
 
     public Member() {
     }
 
-    public Member(String name, int personalNum, int memberID, Boat[] boat) {
+    public Member(String name, int personalNum, int memberID) {
         this.memberID = memberID;
         this.name = name;
         this.personalNum = personalNum;
     }
-    public boolean removeMem(int memberID){
-        for(int i = 0; i < memList.size(); i++){
-            if(memList.get(i).memberID == memberID){
-                memList.remove(i);
-            }
-        }
 
-        log.removeMember(memberID);
-        return true;
+    public void logMem(){
+        log.logMem(name, personalNum, memberID);
     }
 
-
-    public void addMem(String name, int personalNum, int memberID) {
-        if (!containsMember(memberID)) {
-            Member newMem = new Member(name, personalNum, memberID, null);
-            memList.add(newMem);
-        }
-    }
-
-    public Member getMem(int memberID) { //Returns member from hashmap
-
-        for(int i = 0; i < memList.size(); i++){
-            if(memList.get(i).memberID == memberID){
-                return memList.get(i);
-            }
-            else return null;
-        }
-        return null;
-    }
-
-        public boolean containsMember(int ID){
-            for (int i = 0; i < memList.size(); i++) {
-                if (memList.get(i).memberID == ID)
-                    return true;
-            }
-            return false;
-        }
-
-    public void changeMem(String name, int personalNum, int memberID) { //Removes old member information and replace with new
-        removeMem(memberID);
-        addMem(name, personalNum, memberID);
-    }
 }
 

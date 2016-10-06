@@ -2,6 +2,8 @@ package View;
 import Model.Boat;
 import Model.Member;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -9,16 +11,15 @@ import java.util.Scanner;
  * Created by carl on 2016-09-20.
  */
 public class Console {
-
-    static Boat b = new Boat();
-    static Member mem = new Member();
-
+    public static ArrayList<Member> memArr = new ArrayList<>();
     public static void userInterfaceBoat(){
 
-        mem.addMem("Anton", 950110, 666);
-        mem.getMem(666);
-        mem.addMem("Hall", 040124, 666);
-        mem.getMem(666);
+
+
+        Member Anton = new Member("Anton", 941001, 666);
+        memArr.add(Anton);
+
+
 /*
         while(true) { // to try endlessly
             Scanner scanner = new Scanner(System.in);
@@ -77,7 +78,7 @@ public class Console {
         }
         */
     }
-
+/*
     public static void changeMem(int memberID) {
         System.out.println("Change information about member");
         Scanner scan = new Scanner(System.in);
@@ -106,5 +107,6 @@ public class Console {
         System.out.println("Member ID: "+ mem.getMem(printID2).memberID +" Member name : " +mem.getMem(printID2).name +
                 " Member Personal Number : "+ mem.getMem(printID2).personalNum);
     }
+    */
 }
 
