@@ -1,21 +1,34 @@
 package View;
-import Model.Boat;
+
+
 import Model.Member;
 
 import java.util.Scanner;
-
 
 /**
  * Created by carl on 2016-09-20.
  */
 public class Console {
+String memberName="";
 
-    static Boat b = new Boat();
-    public static Member mem = new Member();
+    public void testingMethod(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter member name s: "+"\t");
+        memberName = scan.nextLine();
 
-    public static void userInterfaceBoat() {
+        Member memberName = new Member();
 
-        mem.addBoat("eka", 23);
+        System.out.println("Enter Model of the boat : "+"\t");
+        String model = scan.nextLine();
+        System.out.println("Enter length of the boat : "+"\t");
+        int length = scan.nextInt();
+        memberName.addBoat(model,length);
+        for (int i = 0; i < memberName.getBoat().length ; i++) {
+            if(memberName.getBoat()[i]==null){
+                break;
+            }
+            System.out.println(memberName.getBoat()[i].model);
+        }
 
 
     }

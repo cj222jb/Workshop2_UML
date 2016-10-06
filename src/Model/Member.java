@@ -9,7 +9,6 @@ public class Member {
     public int memberID;
     Boat[] boatArr = new Boat[5];
 
-
     public Member() {
     }
 
@@ -19,6 +18,9 @@ public class Member {
         this.personalNum = personalNum;
     }
 
+    public Boat[] getBoat(){
+        return boatArr;
+    }
     public void addBoat(String model,int length){
         Boat b = new Boat(model,length);
         for (int i = 0; i <5 ; i++) {
