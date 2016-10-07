@@ -33,8 +33,14 @@ public class ManageMember {
     }
 
     public Member getMemById(int ID){
-        return memArray.get(memArray.indexOf(ID));
+        for (int i = 0; i <memArray.size() ; i++) {
+            if(memArray.get(i).memberID==ID){
+                return memArray.get(i);
+            }
+        }
+        return null;
     }
+
     public Member getMemByName(String name){
         for (int i = 0; i < memArray.size() ; i++) {
             if(name == memArray.get(i).name){

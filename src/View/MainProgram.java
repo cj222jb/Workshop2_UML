@@ -6,6 +6,7 @@ import java.io.*;
 
 public class MainProgram {
     static Console c = new Console();
+
     static ManageMember manageMem = new ManageMember();
     public static void main(String[] args) throws IOException {
 
@@ -18,11 +19,7 @@ public class MainProgram {
         }
 
         c.testingMethod();
-
     }
-
-
-
     static public void loadLog() throws IOException {
         File path = new File("Files");
         File[] files = path.listFiles();
@@ -49,11 +46,11 @@ public class MainProgram {
                         }
                     }
                 }
+
             }
         }
-
-
     }
+
 
 
 
