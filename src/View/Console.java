@@ -11,12 +11,22 @@ import java.util.Scanner;
  */
 public class Console {
     public static ManageMember manageMem = new ManageMember();
-    public static ArrayList <Member> memArr= new ArrayList<>();
+    public static ArrayList<Member> memArr = new ArrayList<>();
 
-    public void testingMethod(){
+    public static Member member = new Member();
+
+    public void testingMethod() {
+
+        manageMem.addMem("Herl", 940124, 666);
+        manageMem.addMem("Carlos", 941217, 667);
         manageMem.iteration();
-        manageMem.getMemById(666).addBoat("Kukhår", 20);
+        manageMem.removeMem(manageMem.getMemByName("Herl"));
+        manageMem.iteration();
 
+        member.addBoat("Eka", 10);
+        member.addBoat("Segelbåt", 25);
+        member.removeBoat(member.getBoatByModel("Eka"));
+        member.iteration();
     }
 }
 
