@@ -15,12 +15,9 @@ public class Console {
 String memberName="";
 
     public void testingMethod(){
-        manageMem.addMem("Herl", 940124, 666);
-        manageMem.iteration();
-
-        //System.out.println(manageMem.getMemById(1336).name);
-
-
+        manageMem.addMem("Anton", 951001, 666);
+        manageMem.addMem("Herl", 940124, 69);
+        System.out.println(manageMem.getMemByName("Herl"));
 
     }
 }
