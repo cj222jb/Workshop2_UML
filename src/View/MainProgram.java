@@ -44,6 +44,8 @@ public class MainProgram {
                             } else {c.manageMem.getMemById(memberID).addBoat(array1[0], Integer.parseInt(array1[1]));}
 
                         }
+                        buf.close();
+                        input.close();
                     }
                 }
 

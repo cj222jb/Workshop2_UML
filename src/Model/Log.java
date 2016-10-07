@@ -92,14 +92,13 @@ public class Log {
     }
 
     public void removeMember(int memID) {
-
-
-        String mapID = ""+memID;
+        String mapID = "Files\\" + memID;
         File file = new File(mapID);
 
-        String[]entries = file.list();
-        for(String s: entries){
-            File currentFile = new File(file.getPath(),s);
+        File[] entries = file.listFiles();
+
+        for(int i=0;i<entries.length;i++){
+            File currentFile = new File(entries[i].getAbsolutePath());
             currentFile.delete();
         }
         file.delete();
