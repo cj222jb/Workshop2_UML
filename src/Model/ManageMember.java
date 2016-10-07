@@ -21,7 +21,7 @@ public class ManageMember {
     }
 
     public void removeMem(Member mem){
-        memArray.remove(memArray.indexOf(mem));
+        memArray.remove(mem);
     }
 
     public boolean containsMem(Member mem){
@@ -42,7 +42,12 @@ public class ManageMember {
     }
 
     public Member getMemByName(String name){
-        return memArray.get(memArray.indexOf(name));
+        for (int i = 0; i < memArray.size() ; i++) {
+            if(name == memArray.get(i).name){
+                return memArray.get(i);
+            }
+        }
+        return null;
     }
 
     public void iteration(){
