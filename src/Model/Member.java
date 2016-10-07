@@ -63,4 +63,14 @@ public class Member {
             System.out.println("");
         }
     }
+    public int numberOfBoats(){
+        return BoatArray.size();
+    }
+    public void iterateBoat(){
+        for (int i = 0; i < BoatArray.size(); i++) {
+            System.out.println("Boat Model :"+BoatArray.get(i).model);
+            System.out.println("Boat Length :"+BoatArray.get(i).length);
+        }
+    }
+
 }

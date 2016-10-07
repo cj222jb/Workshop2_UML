@@ -23,10 +23,25 @@ public class Console {
         manageMem.removeMem(manageMem.getMemByName("Herl"));
         manageMem.iteration();
 
-        member.addBoat("Eka", 10);
-        member.addBoat("Segelbåt", 25);
+        manageMem.getMemById(666).addBoat("Eka", 18);
         member.removeBoat(member.getBoatByModel("Eka"));
-        member.iteration();
+        compactList(manageMem.getMemById(666));
+        verboseList(manageMem.getMemById(666));
+
+    }
+
+
+    public void compactList(Member mem){
+        System.out.println("Members name :"+mem.name);
+        System.out.println("MemberID :"+mem.memberID);
+        System.out.println("Members number of boats :"+mem.numberOfBoats());
+    }
+
+    public void verboseList(Member mem){
+        System.out.println("Members name :"+mem.name);
+        System.out.println("Members Personalnumber :"+mem.personalNum);
+        System.out.println("MemberID :"+mem.memberID);
+        mem.iterateBoat();
     }
 }
 
