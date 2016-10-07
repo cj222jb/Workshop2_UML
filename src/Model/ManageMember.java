@@ -10,8 +10,9 @@ public class ManageMember {
     Console cons = new Console();
     ArrayList<Member> memArray = new ArrayList<>();
 
-    public ManageMember(){
-        this.memArray = cons.memArr;
+
+    public void addMem(String name, int personalNum, int memberID){
+        memArray.add(new Member(name, personalNum, memberID));
     }
 
     public void changeMem(Member mem, String name, int personalNumber){
@@ -29,5 +30,20 @@ public class ManageMember {
         }
         else return false;
 
+    }
+
+    public Member getMemById(int ID){
+        return memArray.get(memArray.indexOf(ID));
+    }
+    public Member getMemByName(String name){
+        return memArray.get(memArray.indexOf(name));
+    }
+
+    public void iteration(){
+        for (int i = 0; i < memArray.size() ; i++) {
+            System.out.println(memArray.get(i).name);
+            System.out.println(memArray.get(i).personalNum);
+            System.out.println(memArray.get(i).memberID);
+        }
     }
 }

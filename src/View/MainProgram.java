@@ -1,6 +1,6 @@
 package View;
 
-
+import Model.Member;
 import java.io.*;
 
 public class MainProgram {
@@ -39,6 +39,8 @@ public class MainProgram {
                     while ( (myLine = buf.readLine()) != null){
                         String [] array1 = myLine.split("-");
                         for (int k = 0; k < array1.length; k++) {
+
+                            c.memArr.add(new Member(array1[2], Integer.parseInt(array1[1]), Integer.parseInt(array1[0])));
                             //add member (array1[0] = id   array1[1] = personalnumber   array1[2] = Name
                         }
                     }

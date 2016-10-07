@@ -2,7 +2,7 @@ package View;
 
 
 import Model.Member;
-
+import Model.ManageMember;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,27 +10,18 @@ import java.util.Scanner;
  * Created by carl on 2016-09-20.
  */
 public class Console {
+    public static ManageMember manageMem = new ManageMember();
     public static ArrayList <Member> memArr= new ArrayList<>();
 String memberName="";
 
     public void testingMethod(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter member name s: "+"\t");
-        memberName = scan.nextLine();
+        manageMem.addMem("Herl", 940124, 666);
+        manageMem.iteration();
 
-        Member memberName = new Member();
+        //System.out.println(manageMem.getMemById(1336).name);
 
-        System.out.println("Enter Model of the boat : "+"\t");
-        String model = scan.nextLine();
-        System.out.println("Enter length of the boat : "+"\t");
-        int length = scan.nextInt();
-        memberName.addBoat(model,length);
-        for (int i = 0; i < memberName.getBoat().length ; i++) {
-            if(memberName.getBoat()[i]==null){
-                break;
-            }
-            System.out.println(memberName.getBoat()[i].model);
-        }
+
+
     }
 }
 
