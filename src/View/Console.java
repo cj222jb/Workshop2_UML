@@ -12,23 +12,19 @@ import java.util.Scanner;
 public class Console {
     public static ManageMember manageMem = new ManageMember();
     public static ArrayList <Member> memArr= new ArrayList<>();
-    public void userInterface() {
+    public static Member member = new Member();
+    public void testingMethod() {
 
-    }
-    public void testingMethod(){
-<<<<<<< HEAD
         manageMem.addMem("Herl", 940124, 666);
         manageMem.addMem("Carlos", 941217, 667);
         manageMem.iteration();
-        manageMem.removeMem(manageMem.getMemById(666));
+        manageMem.removeMem(manageMem.getMemByName("Herl"));
         manageMem.iteration();
 
-        //System.out.println(manageMem.getMemById(1336).name);
-=======
-        manageMem.addMem("Anton", 951001, 666);
-        manageMem.addMem("Herl", 940124, 69);
-        System.out.println(manageMem.getMemByName("Herl"));
->>>>>>> 4b889af5db35d1e741af55a96f98b40901c020e6
+        member.addBoat("Eka",10);
+        member.addBoat("Segelbåt",25);
+        member.removeBoat(member.getBoatByModel("Segelbåt"));
+        member.iteration();
 
     }
 }

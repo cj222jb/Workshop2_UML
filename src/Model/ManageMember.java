@@ -55,6 +55,7 @@ public class ManageMember {
             System.out.println(memArray.get(i).name);
             System.out.println(memArray.get(i).personalNum);
             System.out.println(memArray.get(i).memberID);
+            System.out.println("");
         }
     }
 }
