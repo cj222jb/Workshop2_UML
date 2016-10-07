@@ -37,6 +37,7 @@ public class Member {
     public void changeBoat(int index,String model,int length) {
         boatArr[index].model=model;
         boatArr[index].length=length;
+        log.changeBoat(boatArr[index],memberID);
     }
 }
 

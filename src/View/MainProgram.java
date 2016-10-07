@@ -1,8 +1,9 @@
 package View;
 
-import Model.ManageMember;
-import Model.Member;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class MainProgram {
     static Console c = new Console();
@@ -10,13 +11,13 @@ public class MainProgram {
 
 
         File files = new File("Files");
-        if (files.exists() && files.isDirectory()) {
+        if (files.exists() && files.isDirectory() && files.list().length>0) {
             loadLog();
         }else{
             files.mkdir();
         }
 
-
+        c.testingMethod();
     }
     static public void loadLog() throws IOException {
         File path = new File("Files");
@@ -44,11 +45,13 @@ public class MainProgram {
                             } else {c.manageMem.getMemById(memberID).addBoat(array1[0], Integer.parseInt(array1[1]));}
 
                         }
+                    buf.close();
+                    input.close();
                     }
+
                 }
 
             }
-        c.testingMethod();
         }
     }
 
