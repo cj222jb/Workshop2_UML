@@ -13,6 +13,10 @@ public class Member {
     public int personalNum;
     public int memberID;
 
+    Boat[] boatArr = new Boat[5];
+    Log log = new Log();
+
+
 
     public Member(String name, int personalNum, int memberID){
         this.name=name;
@@ -20,19 +24,21 @@ public class Member {
         this.memberID=memberID;
     }
     public Member(){
+
     }
 
     public void addBoat(String model, int length){
         BoatArray.add(new Boat(model,length));
     }
-    public Boat getBoatByModel(String model){
-        for (int i = 0; i <BoatArray.size() ; i++) {
-            if(BoatArray.get(i).model==model){
+    public Boat getBoatByModel(String model) {
+        for (int i = 0; i < BoatArray.size(); i++) {
+            if (BoatArray.get(i).model == model) {
                 return BoatArray.get(i);
             }
         }
         return null;
     }
+
 
     public void changeBoat(Boat b , String model, int length){
         BoatArray.get(BoatArray.indexOf(b)).model = model;

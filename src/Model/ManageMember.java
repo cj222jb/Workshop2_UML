@@ -7,17 +7,19 @@ import View.Console;
 
 import java.util.ArrayList;
 public class ManageMember {
-    Console cons = new Console();
+    Log log = new Log();
     ArrayList<Member> memArray = new ArrayList<>();
 
 
     public void addMem(String name, int personalNum, int memberID){
         memArray.add(new Member(name, personalNum, memberID));
+        log.logMem(getMemById(memberID), memberID);
     }
 
     public void changeMem(Member mem, String name, int personalNumber){
         memArray.get(memArray.indexOf(mem)).name = name;
         memArray.get(memArray.indexOf(mem)).personalNum = personalNumber;
+
     }
 
     public void removeMem(Member mem){
@@ -51,6 +53,7 @@ public class ManageMember {
     }
 
     public void iteration(){
+        System.out.println(memArray.size());
         for (int i = 0; i < memArray.size() ; i++) {
             System.out.println(memArray.get(i).name);
             System.out.println(memArray.get(i).personalNum);

@@ -12,7 +12,7 @@ public class Log {
 
     public void logboat(Boat boat, int memID) {
         int nr = 1;
-        String mapID = ""+memID;
+        String mapID = "Files\\"+memID;
         String filename = mapID+"\\"+"Boat_"+nr+".txt";
         BufferedWriter writer = null;
         File f = new File(filename);
@@ -26,10 +26,7 @@ public class Log {
 
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write("Boat Length: : " + boat.length);
-            writer.newLine();
-            writer.write("Boat Model: : " + boat.model);
-
+            writer.write(boat.model+"-"+boat.length);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -51,7 +48,7 @@ public class Log {
 
     public void logMem(Member mem, int id) {
 
-        String mapID = ""+id;
+        String mapID = "Files\\"+id;
         File map = new File(mapID);
         map.mkdir();
 
@@ -62,12 +59,7 @@ public class Log {
 
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write("Member ID: " + mem.memberID);
-            writer.newLine();
-            writer.write("Member Personal Number: " + mem.personalNum);
-            writer.newLine();
-            writer.write("Member Name: " + mem.name);
-
+            writer.write(mem.memberID + "-"+ mem.personalNum + "-" + mem.name);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
