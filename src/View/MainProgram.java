@@ -6,8 +6,6 @@ import java.io.*;
 
 public class MainProgram {
     static Console c = new Console();
-
-    static ManageMember manageMem = new ManageMember();
     public static void main(String[] args) throws IOException {
 
 
@@ -18,7 +16,7 @@ public class MainProgram {
             files.mkdir();
         }
 
-        c.testingMethod();
+
     }
     static public void loadLog() throws IOException {
         File path = new File("Files");
@@ -30,24 +28,27 @@ public class MainProgram {
 
                 //Load Members
                 for (int j = temp.length - 1; j >= 0; j--) {
-                    System.out.println(temp[0]);
+                  //  System.out.println(temp[0]);
                     FileReader input = new FileReader(temp[j]);
                     BufferedReader buf = new BufferedReader(input);
                     String myLine = null;
 
                     while ((myLine = buf.readLine()) != null) {
                         String[] array1 = myLine.split("-");
-                        for (int k = 0; k < array1.length; k++) {
+                        int memberID = 0;
                             if (j == temp.length - 1) {
-                                manageMem.addMem(array1[2], Integer.parseInt(array1[1]), Integer.parseInt(array1[0]));
+                                memberID = Integer.parseInt(array1[0]);
+                            //    manageMem.addMem(array1[2], Integer.parseInt(array1[1]), Integer.parseInt(array1[0]));
+                                c.manageMem.addMem(array1[2], Integer.parseInt(array1[1]), memberID);
                                 //add member (array1[0] = id   array1[1] = personalnumber   array1[2] = Name
-                            } else {}
-                            }
+                            } else {c.manageMem.getMemById(memberID).addBoat(array1[0], Integer.parseInt(array1[1]));}
+
                         }
                     }
                 }
 
             }
+        c.testingMethod();
         }
     }
 

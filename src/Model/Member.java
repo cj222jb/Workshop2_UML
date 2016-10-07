@@ -8,6 +8,7 @@ public class Member {
     public int personalNum;
     public int memberID;
     Boat[] boatArr = new Boat[5];
+    Log log = new Log();
 
     public Member() {
     }
@@ -22,6 +23,7 @@ public class Member {
     }
     public void addBoat(String model,int length){
         Boat b = new Boat(model,length);
+        log.logboat(b,memberID);
         for (int i = 0; i <5 ; i++) {
             if(boatArr[i]==null){
                 boatArr[i]=b;
