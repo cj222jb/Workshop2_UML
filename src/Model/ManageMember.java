@@ -3,8 +3,6 @@ package Model;
 /**
  * Created by carl on 2016-10-06.
  */
-import View.Console;
-
 import java.util.ArrayList;
 public class ManageMember {
     Log log = new Log();
@@ -17,12 +15,14 @@ public class ManageMember {
     }
 
     public void changeMem(Member mem, String name, int personalNumber){
+        log.changeMem(mem.name,mem.personalNum,mem.memberID);
         memArray.get(memArray.indexOf(mem)).name = name;
         memArray.get(memArray.indexOf(mem)).personalNum = personalNumber;
 
     }
 
     public void removeMem(Member mem){
+        log.removeMember(mem.memberID);
         memArray.remove(mem);
     }
 

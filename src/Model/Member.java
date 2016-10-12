@@ -6,12 +6,15 @@ package Model;
 import View.Console;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Member {
     Console cons = new Console();
     ArrayList<Boat> BoatArray = new ArrayList<>();
     public String name;
     public int personalNum;
     public int memberID;
+    public int userChoice;
 
     Boat[] boatArr = new Boat[5];
     Log log = new Log();
@@ -63,14 +66,27 @@ public class Member {
             System.out.println("");
         }
     }
+    public void changeBoat(int index,String model,int length) {
+        boatArr[index].model = model;
+        boatArr[index].length = length;
+        log.changeBoat(boatArr[index], memberID);
+    }
     public int numberOfBoats(){
         return BoatArray.size();
     }
-    public void iterateBoat(){
-        for (int i = 0; i < BoatArray.size(); i++) {
-            System.out.println("Boat Model :"+BoatArray.get(i).model);
-            System.out.println("Boat Length :"+BoatArray.get(i).length);
-        }
+
+    public Boat getBoatByIndex() {
+        return BoatArray.get(userChoice);
     }
 
+
+
+    public void iterateBoat(){
+        for (int i = 0; i < BoatArray.size(); i++) {
+            System.out.println(boatArr[i]+" Indexnumber: "+i);
+        }
+        System.out.println("Choose which boat you want to interfer with by entering its indexnumber\n");
+        Scanner scan=new Scanner(System.in);
+        userChoice =scan.nextInt();
+    }
 }
