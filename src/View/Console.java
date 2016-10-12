@@ -1,6 +1,7 @@
 package View;
 
 
+import Model.Boat;
 import Model.Member;
 import Model.ManageMember;
 
@@ -14,20 +15,26 @@ public class Console {
     static ManageMember manageMem = new ManageMember();
     static Member member = new Member();
     ArrayList<Member> memArray = new ArrayList<>();
+    ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
     int memberID;
     int userChoice;
+    String model;
+    int length;
 
     public void testingMethod() {
         manageMem.addMem("Anton", 19995, 01);
         manageMem.addMem("Carl", 193333, 02);
+        member.addBoat("Eka",23);
+        member.addBoat("Salbot",12);
         memArray=manageMem.returnList();
+        BoatArray=member.returnBList();
 
         for (int i = 0; i <memArray.size() ; i++) {
             System.out.println(memArray.get(i).getName());
             System.out.println(memArray.get(i).getUniqueId());
-            //
+            System.out.println("Number of boats: "+BoatArray.size()+"\n");
         }
 
 

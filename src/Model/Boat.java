@@ -10,6 +10,14 @@ public class Boat {
     }
     public Boat(){
     }
+
+    public String getType(){
+        return this.model;
+    }
+    public int getLength(){
+        return this.length;
+    }
+
 }
 
 
