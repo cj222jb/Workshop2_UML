@@ -4,7 +4,6 @@ package View;
 import Model.Boat;
 import Model.Member;
 import Model.ManageMember;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,18 +17,27 @@ public class Console {
     ArrayList<Boat> BoatArray = new ArrayList<>();
 
     public void testingMethod() {
+
+        System.out.println();
         manageMem.addMem("Anton", 19995, 01);
         manageMem.addMem("Carl", 193333, 02);
         member.addBoat("Eka",23);
-        member.addBoat("Salbot",12);
+
         memArray=manageMem.returnList();
-        BoatArray=member.returnBList();
+        memArray.get(0).addBoat("Salbot",12);
+       // BoatArray=member.returnBList();
 
         for (int i = 0; i <memArray.size() ; i++) {
+
             System.out.println(memArray.get(i).getName());
             System.out.println(memArray.get(i).getUniqueId());
-            System.out.println("Number of boats: "+BoatArray.size()+"\n");
+            System.out.println("Number of boats: "+BoatArray.size());
+            System.out.println("If you want to change this member please press "+i+"\n");
+
         }
+        Scanner temp = new Scanner(System.in);
+        int hue = temp.nextInt();
+        System.out.println(memArray.get(hue).returnBList().size());
 
 
         System.out.println("If you want to print Verbose List press v\n" +

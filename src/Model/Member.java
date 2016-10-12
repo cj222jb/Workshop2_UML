@@ -3,15 +3,12 @@ package Model;
 /**
  * Created by carl on 2016-10-06.
  */
-import View.Console;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class Member {
     String uniqueId= UUID.randomUUID().toString();
-    Console cons = new Console();
     ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
@@ -33,13 +30,15 @@ public class Member {
         return this.uniqueId;
     }
 
-    public Member(String name, int personalNum, int memberID){
+    public Member(String name, int personalNum){
         this.name=name;
         this.personalNum=personalNum;
-        this.memberID=memberID;
     }
     public Member(){
 
+    }
+    public String returnName(){
+        return this.name;
     }
 
     public void addBoat(String model, int length){
@@ -61,5 +60,22 @@ public class Member {
         }
         else return false;
 
+    }
+    public int numberOfBoats(){
+        return BoatArray.size();
+    }
+
+    public Boat getBoatByIndex() {
+        return BoatArray.get(userChoice);
+    }
+
+
+
+    public void iterateBoat(){
+        for (int i = 0; i < BoatArray.size(); i++) {
+        }
+        System.out.println("Choose which boat you want to interfer with by entering its indexnumber\n");
+        Scanner scan=new Scanner(System.in);
+        userChoice = scan.nextInt();
     }
 }

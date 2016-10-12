@@ -1,8 +1,6 @@
 package Model;
 
 import java.io.*;
-import java.io.File;
-import java.util.Scanner;
 
 /**
  * Created by carl on 2016-09-20.
@@ -60,19 +58,13 @@ public class Log {
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
             writer.write(mem.memberID + "-"+ mem.personalNum + "-" + mem.name);
-
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (writer != null) try {
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
         }
     }
@@ -92,31 +84,15 @@ public class Log {
     }
 
     public void removeMember(int memID) {
-
-
-        String mapID = ""+memID;
+        String mapID = "Files\\" + memID;
         File file = new File(mapID);
+            File[] entries = file.listFiles();
 
-        String[]entries = file.list();
-        for(String s: entries){
-            File currentFile = new File(file.getPath(),s);
+        for(int i=0;i<entries.length;i++){
+            File currentFile = new File(entries[i].getAbsolutePath());
             currentFile.delete();
-        }
-        file.delete();
-    }
-
-    public String getMem(int memberID){
-        String fileContent ="";
-        try (Scanner scan = new Scanner(new FileReader(memberID+"\\"+"Member.txt"))) {
-            while(scan.hasNextLine()) {
-                fileContent = scan.nextLine();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-
-        return fileContent;
+             }
+            file.delete();
     }
 
 
@@ -124,7 +100,7 @@ public class Log {
     public void changeMem(String name , int num, int id){
 
         BufferedWriter writer = null;
-        String mapID = ""+id;
+        String mapID = "Files\\"+id;
         String filename = mapID+"\\"+"Member.txt";
         File file = new File(filename);
 
@@ -134,22 +110,19 @@ public class Log {
         try {
             writer = new BufferedWriter(new FileWriter(file2));
 
-            writer.write("Member ID: " + id);
-            writer.newLine();
-            writer.write("Member Personal Number: " + num);
-            writer.newLine();
-            writer.write("Member Name: " + name);
-
+            writer.write(id+ "-"+num+ "-" +name);
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    public void changeBoat(int memID,String model , int length, int boatID){
+    public void changeBoat(Boat boat, int memID){
 
         BufferedWriter writer = null;
-        String mapID = ""+memID;
+        String boatID = "";
+        String mapID = "Files\\"+memID;
         String filename = mapID+"\\"+"Boat_"+boatID+".txt";
         File file = new File(filename);
         file.delete();
@@ -159,11 +132,7 @@ public class Log {
         try {
             writer = new BufferedWriter(new FileWriter(file2));
 
-            writer.write("Boat ID: " + boatID);
-            writer.newLine();
-            writer.write("Boat Length: : " + length);
-            writer.newLine();
-            writer.write("Boat Model: : " + model);
+            writer.write(boat.model+"-"+boat.length);
 
         } catch (IOException e) {
             e.printStackTrace();
