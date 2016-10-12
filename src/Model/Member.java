@@ -13,9 +13,13 @@ public class Member {
     String name;
     int personalNum;
     int memberID;
-    int userChoice;
 
-    Log log = new Log();
+    public Member(String name, int personalNum){
+        this.name=name;
+        this.personalNum=personalNum;
+    }
+    public Member(){
+    }
 
     public ArrayList<Boat> returnBList(){
         return BoatArray;
@@ -30,17 +34,6 @@ public class Member {
         return this.uniqueId;
     }
 
-    public Member(String name, int personalNum){
-        this.name=name;
-        this.personalNum=personalNum;
-    }
-    public Member(){
-
-    }
-    public String returnName(){
-        return this.name;
-    }
-
     public void addBoat(String model, int length){
         BoatArray.add(new Boat(model,length));
     }
@@ -52,30 +45,5 @@ public class Member {
 
     public void removeBoat(Boat b){
         BoatArray.remove(b);
-    }
-
-    public boolean containsBoat(Boat b){
-        if(BoatArray.contains(BoatArray.indexOf(b))){
-            return true;
-        }
-        else return false;
-
-    }
-    public int numberOfBoats(){
-        return BoatArray.size();
-    }
-
-    public Boat getBoatByIndex() {
-        return BoatArray.get(userChoice);
-    }
-
-
-
-    public void iterateBoat(){
-        for (int i = 0; i < BoatArray.size(); i++) {
-        }
-        System.out.println("Choose which boat you want to interfer with by entering its indexnumber\n");
-        Scanner scan=new Scanner(System.in);
-        userChoice = scan.nextInt();
     }
 }

@@ -24,20 +24,9 @@ public class ManageMember {
         log.changeMem(mem.name,mem.personalNum,mem.memberID);
         memArray.get(memArray.indexOf(mem)).name = name;
         memArray.get(memArray.indexOf(mem)).personalNum = personalNumber;
-
     }
-
     public void removeMem(Member mem){
         log.removeMember(mem.memberID);
         memArray.remove(mem);
     }
-
-    public boolean containsMem(Member mem){
-        if(memArray.contains(memArray.indexOf(mem))){
-            return true;
-        }
-        else return false;
-
-    }
-
 }
