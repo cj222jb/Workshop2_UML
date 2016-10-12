@@ -18,6 +18,9 @@ public class Member {
     Boat[] boatArr = new Boat[5];
     Log log = new Log();
 
+    public ArrayList<Boat> returnBList(){
+        return BoatArray;
+    }
     public String getName(){
         return this.name;
     }

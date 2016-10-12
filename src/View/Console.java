@@ -1,12 +1,10 @@
 package View;
 
 
-import Model.ManageMember;
+import Model.Boat;
 import Model.Member;
-
+import Model.ManageMember;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.UUID;
 
 /**
  * Created by carl on 2016-09-20.
@@ -15,10 +13,13 @@ public class Console {
     static ManageMember manageMem = new ManageMember();
     static Member member = new Member();
     ArrayList<Member> memArray = new ArrayList<>();
+    ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
     int memberID;
     int userChoice;
+    String model;
+    int length;
 
     public void testingMethod() {
 
@@ -78,12 +79,15 @@ public class Console {
 =======
         manageMem.addMem("Anton", 19995, 01);
         manageMem.addMem("Carl", 193333, 02);
+        member.addBoat("Eka",23);
+        member.addBoat("Salbot",12);
         memArray=manageMem.returnList();
+        BoatArray=member.returnBList();
 
         for (int i = 0; i <memArray.size() ; i++) {
             System.out.println(memArray.get(i).getName());
             System.out.println(memArray.get(i).getUniqueId());
-            //
+            System.out.println("Number of boats: "+BoatArray.size()+"\n");
         }
 >>>>>>> 7d5ee6fadd686e39bdf51329f18c70bcbb278c90
 
