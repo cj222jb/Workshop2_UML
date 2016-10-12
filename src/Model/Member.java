@@ -7,19 +7,29 @@ import View.Console;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Member {
+    String uniqueId= UUID.randomUUID().toString();
     Console cons = new Console();
     ArrayList<Boat> BoatArray = new ArrayList<>();
-    public String name;
-    public int personalNum;
-    public int memberID;
-    public int userChoice;
+    String name;
+    int personalNum;
+    int memberID;
+    int userChoice;
 
     Boat[] boatArr = new Boat[5];
     Log log = new Log();
 
-
+    public String getName(){
+        return this.name;
+    }
+    public int getPersonNr(){
+        return this.personalNum;
+    }
+    public String getUniqueId(){
+        return this.uniqueId;
+    }
 
     public Member(String name, int personalNum, int memberID){
         this.name=name;
@@ -58,30 +68,5 @@ public class Member {
         }
         else return false;
 
-    }
-    public void iteration(){
-        for (int i = 0; i < BoatArray.size() ; i++) {
-            System.out.println(BoatArray.get(i).model);
-            System.out.println(BoatArray.get(i).length);
-            System.out.println("");
-        }
-    }
-    public int numberOfBoats(){
-        return BoatArray.size();
-    }
-
-    public Boat getBoatByIndex() {
-        return BoatArray.get(userChoice);
-    }
-
-
-
-    public void iterateBoat(){
-        for (int i = 0; i < BoatArray.size(); i++) {
-            System.out.println(boatArr[i]+" Indexnumber: "+i);
-        }
-        System.out.println("Choose which boat you want to interfer with by entering its indexnumber\n");
-        Scanner scan=new Scanner(System.in);
-        userChoice =scan.nextInt();
     }
 }

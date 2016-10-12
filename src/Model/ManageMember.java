@@ -10,7 +10,9 @@ public class ManageMember {
     Log log = new Log();
     ArrayList<Member> memArray = new ArrayList<>();
 
-
+    public ArrayList<Member> returnList(){
+        return memArray;
+    }
     public void addMem(String name, int personalNum, int memberID){
         memArray.add(new Member(name, personalNum, memberID));
         log.logMem(getMemById(memberID), memberID);
