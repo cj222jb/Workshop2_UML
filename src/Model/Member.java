@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class Member {
-    String uniqueId= UUID.randomUUID().toString();
+    String uniqueId;
     ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
@@ -29,9 +29,12 @@ public class Member {
         return this.uniqueId;
     }
 
-    public Member(String name, int personalNum){
+    public Member(String name, int personalNum,String id){
         this.name=name;
         this.personalNum=personalNum;
+        if(id=="")
+            uniqueId = UUID.randomUUID().toString();
+        else uniqueId = id;
     }
     public Member(){
 
@@ -40,8 +43,18 @@ public class Member {
         return this.name;
     }
 
-    public void addBoat(String model, int length){
-        BoatArray.add(new Boat(model,length));
+    public void addBoat(String model, int length,boolean status){
+        int nr = 1;
+        for (int i=0;i<BoatArray.size()-1;i++)
+            if (nr == BoatArray.get(i).nr) {
+                nr++;
+                i = 0;
+            }
+        Boat temp = new Boat();
+        BoatArray.add(temp = new Boat(model,length,nr));
+        if (!status)
+        log.logboat(temp,uniqueId);
+
     }
     public Boat getBoatByModel(String model) {
         for (int i = 0; i < BoatArray.size(); i++) {

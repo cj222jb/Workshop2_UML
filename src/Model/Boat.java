@@ -3,10 +3,12 @@ package Model;
 public class Boat {
      String model;
      int length;
+     int nr;
 
-    public Boat(String model,int length){
+    public Boat(String model,int length,int nr){
         this.model=model;
         this.length=length;
+        this.nr=nr;
     }
     public Boat(){
     }

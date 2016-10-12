@@ -8,8 +8,8 @@ import java.io.*;
 public class Log {
 
 
-    public void logboat(Boat boat, int memID) {
-        int nr = 1;
+    public void logboat(Boat boat, String memID) {
+        int nr = boat.nr;
         String mapID = "Files\\"+memID;
         String filename = mapID+"\\"+"Boat_"+nr+".txt";
         BufferedWriter writer = null;
@@ -24,7 +24,7 @@ public class Log {
 
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write(boat.model+"-"+boat.length);
+            writer.write(boat.model+">"+boat.length);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -44,9 +44,9 @@ public class Log {
 
 
 
-    public void logMem(Member mem, int id) {
+    public void logMem(Member mem) {
 
-        String mapID = "Files\\"+id;
+        String mapID = "Files\\"+mem.uniqueId;
         File map = new File(mapID);
         map.mkdir();
 
@@ -57,7 +57,7 @@ public class Log {
 
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write(mem.memberID + "-"+ mem.personalNum + "-" + mem.name);
+            writer.write(mem.uniqueId + ">"+ mem.personalNum + ">" + mem.name);
             writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -70,10 +70,10 @@ public class Log {
     }
 
 
-    public boolean removeBoat(int memID, int boatID) {
+    public boolean removeBoat(Boat boat,String memID) {
 
-
-        String mapID = memID+"\\"+"Boat_"+boatID+".txt";
+        int boatID = boat.nr;
+        String mapID = "Files\\" +memID+"\\"+"Boat_"+boatID+".txt";
         boolean remov = false;
         File file = new File(mapID);
 
@@ -83,7 +83,7 @@ public class Log {
         return remov;
     }
 
-    public void removeMember(int memID) {
+    public void removeMember(String memID) {
         String mapID = "Files\\" + memID;
         File file = new File(mapID);
             File[] entries = file.listFiles();
@@ -97,7 +97,7 @@ public class Log {
 
 
 
-    public void changeMem(String name , int num, int id){
+    public void changeMem(String name , int num,String id){
 
         BufferedWriter writer = null;
         String mapID = "Files\\"+id;
@@ -110,7 +110,7 @@ public class Log {
         try {
             writer = new BufferedWriter(new FileWriter(file2));
 
-            writer.write(id+ "-"+num+ "-" +name);
+            writer.write(id+ ">"+num+ ">" +name);
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -118,7 +118,7 @@ public class Log {
 
     }
 
-    public void changeBoat(Boat boat, int memID){
+    public void changeBoat(Boat boat, String memID){
 
         BufferedWriter writer = null;
         String boatID = "";
@@ -132,7 +132,7 @@ public class Log {
         try {
             writer = new BufferedWriter(new FileWriter(file2));
 
-            writer.write(boat.model+"-"+boat.length);
+            writer.write(boat.model+">"+boat.length);
 
         } catch (IOException e) {
             e.printStackTrace();
