@@ -16,12 +16,6 @@ public class Console {
     static Member member = new Member();
     ArrayList<Member> memArray = new ArrayList<>();
     ArrayList<Boat> BoatArray = new ArrayList<>();
-    String name;
-    int personalNum;
-    int memberID;
-    int userChoice;
-    String model;
-    int length;
 
     public void testingMethod() {
         manageMem.addMem("Anton", 19995, 01);
