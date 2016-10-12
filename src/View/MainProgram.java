@@ -9,16 +9,17 @@ public class MainProgram {
     static Console c = new Console();
     public static void main(String[] args) throws IOException {
 
-
+/*
         File files = new File("Files");
         if (files.exists() && files.isDirectory() && files.list().length>0) {
             loadLog();
         }else{
             files.mkdir();
         }
-
+*/
         c.testingMethod();
     }
+    /*
     static public void loadLog() throws IOException {
         File path = new File("Files");
         File[] files = path.listFiles();
@@ -53,6 +54,7 @@ public class MainProgram {
 
             }
         }
+        */
     }
 
 

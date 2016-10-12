@@ -5,6 +5,7 @@ import Model.ManageMember;
 import Model.Member;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 /**
  * Created by carl on 2016-09-20.
@@ -14,6 +15,12 @@ public class Console {
     public static Member member = new Member();
 
     public void testingMethod() {
+
+        manageMem.addMem("Anton", 951001, 123);
+        System.out.println();
+
+
+        /*
         Scanner scan = new Scanner(System.in);
         while(true) {
             System.out.println("Enter your Member ID");
@@ -90,5 +97,6 @@ public class Console {
         System.out.println("MemberID :"+mem.memberID);
         mem.iterateBoat();
     }
+*/}
 }
 

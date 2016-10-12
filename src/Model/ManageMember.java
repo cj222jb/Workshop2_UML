@@ -9,9 +9,8 @@ public class ManageMember {
     ArrayList<Member> memArray = new ArrayList<>();
 
 
-    public void addMem(String name, int personalNum, int memberID){
-        memArray.add(new Member(name, personalNum, memberID));
-        log.logMem(getMemById(memberID), memberID);
+    public void addMem(String name, int personalNum){
+        memArray.add(new Member(name, personalNum));
     }
 
     public void changeMem(Member mem, String name, int personalNumber){
@@ -34,31 +33,4 @@ public class ManageMember {
 
     }
 
-    public Member getMemById(int ID){
-        for (int i = 0; i <memArray.size() ; i++) {
-            if(memArray.get(i).memberID==ID){
-                return memArray.get(i);
-            }
-        }
-        return null;
-    }
-
-    public Member getMemByName(String name){
-        for (int i = 0; i < memArray.size() ; i++) {
-            if(name == memArray.get(i).name){
-                return memArray.get(i);
-            }
-        }
-        return null;
-    }
-
-    public void iteration(){
-        System.out.println(memArray.size());
-        for (int i = 0; i < memArray.size() ; i++) {
-            System.out.println(memArray.get(i).name);
-            System.out.println(memArray.get(i).personalNum);
-            System.out.println(memArray.get(i).memberID);
-            System.out.println("");
-        }
-    }
 }

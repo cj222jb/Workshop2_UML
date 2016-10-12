@@ -3,31 +3,28 @@ package Model;
 /**
  * Created by carl on 2016-10-06.
  */
-import View.Console;
-
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Member {
-    Console cons = new Console();
     ArrayList<Boat> BoatArray = new ArrayList<>();
     public String name;
     public int personalNum;
     public int memberID;
     public int userChoice;
-
-    Boat[] boatArr = new Boat[5];
-    Log log = new Log();
+    String uniqueId = UUID.randomUUID().toString(); //Generates a unique ID
 
 
-
-    public Member(String name, int personalNum, int memberID){
+    public Member(String name, int personalNum){
         this.name=name;
         this.personalNum=personalNum;
-        this.memberID=memberID;
     }
     public Member(){
 
+    }
+    public String returnName(){
+        return this.name;
     }
 
     public void addBoat(String model, int length){
@@ -59,18 +56,6 @@ public class Member {
         else return false;
 
     }
-    public void iteration(){
-        for (int i = 0; i < BoatArray.size() ; i++) {
-            System.out.println(BoatArray.get(i).model);
-            System.out.println(BoatArray.get(i).length);
-            System.out.println("");
-        }
-    }
-    public void changeBoat(int index,String model,int length) {
-        boatArr[index].model = model;
-        boatArr[index].length = length;
-        log.changeBoat(boatArr[index], memberID);
-    }
     public int numberOfBoats(){
         return BoatArray.size();
     }
@@ -83,10 +68,9 @@ public class Member {
 
     public void iterateBoat(){
         for (int i = 0; i < BoatArray.size(); i++) {
-            System.out.println(boatArr[i]+" Indexnumber: "+i);
         }
         System.out.println("Choose which boat you want to interfer with by entering its indexnumber\n");
         Scanner scan=new Scanner(System.in);
-        userChoice =scan.nextInt();
+        userChoice = scan.nextInt();
     }
 }
