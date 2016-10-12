@@ -14,8 +14,6 @@ public class Member {
     int personalNum;
     int memberID;
     int userChoice;
-
-    Boat[] boatArr = new Boat[5];
     Log log = new Log();
 
     public ArrayList<Boat> returnBList(){

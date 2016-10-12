@@ -5,6 +5,7 @@ import Model.Boat;
 import Model.Member;
 import Model.ManageMember;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by carl on 2016-09-20.
@@ -14,82 +15,30 @@ public class Console {
     static Member member = new Member();
     ArrayList<Member> memArray = new ArrayList<>();
     ArrayList<Boat> BoatArray = new ArrayList<>();
-    String name;
-    int personalNum;
-    int memberID;
-    int userChoice;
-    String model;
-    int length;
+
 
     public void testingMethod() {
 
-        manageMem.addMem("Anton", 951001, 123);
         System.out.println();
-
-
-        /*
-        Scanner scan = new Scanner(System.in);
-        while(true) {
-            System.out.println("Enter your Member ID");
-            int memberID = scan.nextInt();
-            Member theMember = manageMem.getMemById(memberID);
-            if (manageMem.containsMem(theMember)) {
-
-                System.out.println("To add boat press a\n"+
-                        "To change boat press c\n"+
-                        "To remove boat press r\n"+
-                        "To change member press m\n"+
-                        "To remove member press n\n"+
-                        "To print verbose list press v\n"+
-                        "To print compact list c\n");
-                String choice =scan.nextLine();
-
-                if(choice=="a"){
-                    System.out.println("Enter boat model : \n");
-                    String model =scan.nextLine();
-                    System.out.println("Enter boat length : \n");
-                    int length = scan.nextInt();
-                    manageMem.getMemById(memberID).addBoat(model,length);
-
-                }else if(choice=="c"){
-                    member.iterateBoat();
-                    System.out.println("Enter the new information about your boat!\n");
-                    System.out.println("Enter boat model : \n");
-                    String model =scan.nextLine();
-                    System.out.println("Enter boat length : \n");
-                    int length = scan.nextInt();
-                    manageMem.getMemById(memberID).changeBoat( member.getBoatByIndex(),model,length);
-
-                }
-                else if(choice=="r"){
-
-                }
-                else if(choice=="m"){
-
-                }
-                else if(choice=="n"){
-
-                }
-                else if(choice=="v"){
-                    verboseList(manageMem.getMemById(memberID));
-                }
-                else if(choice=="c"){
-                    compactList(manageMem.getMemById(memberID));
-                }
-=======
         manageMem.addMem("Anton", 19995, 01);
         manageMem.addMem("Carl", 193333, 02);
         member.addBoat("Eka",23);
-        member.addBoat("Salbot",12);
+
         memArray=manageMem.returnList();
-        BoatArray=member.returnBList();
+        memArray.get(0).addBoat("Salbot",12);
+       // BoatArray=member.returnBList();
 
         for (int i = 0; i <memArray.size() ; i++) {
+
             System.out.println(memArray.get(i).getName());
             System.out.println(memArray.get(i).getUniqueId());
-            System.out.println("Number of boats: "+BoatArray.size()+"\n");
+            System.out.println("Number of boats: "+BoatArray.size());
+            System.out.println("If you want to change this member please press "+i+"\n");
+
         }
->>>>>>> 7d5ee6fadd686e39bdf51329f18c70bcbb278c90
+        Scanner temp = new Scanner(System.in);
+        int hue = temp.nextInt();
+        System.out.println(memArray.get(hue).returnBList().size());
 
 
         System.out.println("If you want to print Verbose List press v\n" +
@@ -110,5 +59,4 @@ public class Console {
 
 
     }
-*/}
 }
