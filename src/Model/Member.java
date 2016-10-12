@@ -4,17 +4,14 @@ package Model;
  * Created by carl on 2016-10-06.
  */
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.UUID;
-
 public class Member {
     String uniqueId;
+    Log log = new Log();
     ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
     int memberID;
-    int userChoice;
-    Log log = new Log();
 
     public ArrayList<Boat> returnBList(){
         return BoatArray;
@@ -43,28 +40,17 @@ public class Member {
         return this.name;
     }
 
-    public void addBoat(String model, int length,boolean status){
+    public void addBoat(String model, int length,boolean status) {
         int nr = 1;
-        for (int i=0;i<BoatArray.size()-1;i++)
+        for (int i = 0; i < BoatArray.size() - 1; i++)
             if (nr == BoatArray.get(i).nr) {
                 nr++;
                 i = 0;
             }
         Boat temp = new Boat();
-        BoatArray.add(temp = new Boat(model,length,nr));
-        if (!status)
-        log.logboat(temp,uniqueId);
-
+        BoatArray.add(temp = new Boat(model, length, nr));
+        if (!status) log.logboat(temp, uniqueId);
     }
-    public Boat getBoatByModel(String model) {
-        for (int i = 0; i < BoatArray.size(); i++) {
-            if (BoatArray.get(i).model == model) {
-                return BoatArray.get(i);
-            }
-        }
-        return null;
-    }
-
 
     public void changeBoat(Boat b , String model, int length){
         BoatArray.get(BoatArray.indexOf(b)).model = model;
@@ -73,30 +59,5 @@ public class Member {
 
     public void removeBoat(Boat b){
         BoatArray.remove(b);
-    }
-
-    public boolean containsBoat(Boat b){
-        if(BoatArray.contains(BoatArray.indexOf(b))){
-            return true;
-        }
-        else return false;
-
-    }
-    public int numberOfBoats(){
-        return BoatArray.size();
-    }
-
-    public Boat getBoatByIndex() {
-        return BoatArray.get(userChoice);
-    }
-
-
-
-    public void iterateBoat(){
-        for (int i = 0; i < BoatArray.size(); i++) {
-        }
-        System.out.println("Choose which boat you want to interfer with by entering its indexnumber\n");
-        Scanner scan=new Scanner(System.in);
-        userChoice = scan.nextInt();
     }
 }

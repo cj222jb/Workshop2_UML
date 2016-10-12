@@ -1,5 +1,6 @@
 package Model;
 
+
 import View.Console;
 import java.io.BufferedReader;
 import java.io.File;
@@ -54,6 +55,10 @@ public class Start {
 
             }
         }
+    }
 
-}
+
+
+
+
 
