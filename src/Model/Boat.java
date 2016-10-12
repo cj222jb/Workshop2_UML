@@ -1,8 +1,8 @@
 package Model;
 
 public class Boat {
-    public String model;
-    public int length;
+     String model;
+     int length;
 
     public Boat(String model,int length){
         this.model=model;

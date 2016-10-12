@@ -4,6 +4,7 @@ package View;
 import Model.ManageMember;
 import Model.Member;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -11,8 +12,13 @@ import java.util.UUID;
  * Created by carl on 2016-09-20.
  */
 public class Console {
-    public static ManageMember manageMem = new ManageMember();
-    public static Member member = new Member();
+    static ManageMember manageMem = new ManageMember();
+    static Member member = new Member();
+    ArrayList<Member> memArray = new ArrayList<>();
+    String name;
+    int personalNum;
+    int memberID;
+    int userChoice;
 
     public void testingMethod() {
 
@@ -69,34 +75,36 @@ public class Console {
                 else if(choice=="c"){
                     compactList(manageMem.getMemById(memberID));
                 }
+=======
+        manageMem.addMem("Anton", 19995, 01);
+        manageMem.addMem("Carl", 193333, 02);
+        memArray=manageMem.returnList();
 
-
-            } else {
-                //Member doesnt exist -> add new member
-                System.out.println("Your not a  member !\n");
-                System.out.println("Enter your name\n");
-                String nameNew = scan.next();
-                System.out.println("Enter your social security number\n");
-                int SSRNew = scan.nextInt();
-                System.out.println("Enter a memberID\n");
-                int memberIDNew = scan.nextInt();
-                manageMem.addMem(nameNew, SSRNew, memberIDNew);
-            }
+        for (int i = 0; i <memArray.size() ; i++) {
+            System.out.println(memArray.get(i).getName());
+            System.out.println(memArray.get(i).getUniqueId());
+            //
         }
-    }
+>>>>>>> 7d5ee6fadd686e39bdf51329f18c70bcbb278c90
 
-    public void compactList(Member mem){
-        System.out.println("Members name :"+mem.name);
-        System.out.println("MemberID :"+mem.memberID);
-        System.out.println("Members number of boats :"+mem.numberOfBoats());
-    }
 
-    public void verboseList(Member mem){
-        System.out.println("Members name :"+mem.name);
-        System.out.println("Members Personalnumber :"+mem.personalNum);
-        System.out.println("MemberID :"+mem.memberID);
-        mem.iterateBoat();
+        System.out.println("If you want to print Verbose List press v\n" +
+                "If you want to print Compact List press c\n" +
+                "If you want to add a new member press m\n ");
+        Scanner scan = new Scanner(System.in);
+        String userChoice = scan.nextLine();
+        if (userChoice=="v"){
+            //Prints verboselist + options
+        }
+        else if(userChoice=="c"){
+            //Prints compactlist + options
+        }
+        else if(userChoice=="m"){
+            //Options to add and change/delet member
+        }
+
+
+
     }
 */}
 }
-

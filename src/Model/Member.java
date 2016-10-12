@@ -8,13 +8,25 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class Member {
+    String uniqueId= UUID.randomUUID().toString();
     ArrayList<Boat> BoatArray = new ArrayList<>();
-    public String name;
-    public int personalNum;
-    public int memberID;
-    public int userChoice;
-    String uniqueId = UUID.randomUUID().toString(); //Generates a unique ID
+    String name;
+    int personalNum;
+    int memberID;
+    int userChoice;
 
+    Boat[] boatArr = new Boat[5];
+    Log log = new Log();
+
+    public String getName(){
+        return this.name;
+    }
+    public int getPersonNr(){
+        return this.personalNum;
+    }
+    public String getUniqueId(){
+        return this.uniqueId;
+    }
 
     public Member(String name, int personalNum){
         this.name=name;
