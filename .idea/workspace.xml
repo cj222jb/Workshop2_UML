@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d22e0b22-950e-4411-8b46-560ae84ef2e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Log.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Log.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/ManageMember.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/ManageMember.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Member.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Member.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/View/Console.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/View/Console.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ManageMember.java" afterPath="$PROJECT_DIR$/src/Model/ManageMember.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Member.java" afterPath="$PROJECT_DIR$/src/Model/Member.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Console.java" afterPath="$PROJECT_DIR$/src/View/Console.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainProgram.java" afterPath="$PROJECT_DIR$/src/View/MainProgram.java" />
     </list>
     <ignored path="Workshop2_UML.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -683,12 +675,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1476273396626</updated>
-      <workItem from="1476273407355" duration="3865000" />
+      <workItem from="1476273407355" duration="4136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3865000" />
+    <option name="totallyTimeSpent" value="4136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
