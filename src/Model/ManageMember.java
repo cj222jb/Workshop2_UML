@@ -9,7 +9,7 @@ public class ManageMember {
     public ArrayList<Member> memArray = new ArrayList<>();
 
     public void addMem(String name, int personalNum,String id){
-        Member temp = new Member();
+        Member temp;
         memArray.add(temp = new Member(name, personalNum,id));
         log.logMem(temp);
     }

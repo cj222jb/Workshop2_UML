@@ -5,7 +5,6 @@ public class Boat {
      int length;
      int nr;
 
-    public Boat(){};
     public Boat(String model,int length,int nr){
         this.model=model;
         this.length=length;

@@ -11,7 +11,6 @@ public class Member {
     ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
-    int memberID;
 
     public Member(String name, int personalNum,String id){
         this.name=name;
@@ -20,8 +19,6 @@ public class Member {
             uniqueId= UUID.randomUUID().toString();
             else
             uniqueId=id;
-    }
-    public Member(){
     }
 
     public ArrayList<Boat> returnBList(){
@@ -37,10 +34,6 @@ public class Member {
         return this.uniqueId;
     }
 
-    public String returnName(){
-        return this.name;
-    }
-
     public void addBoat(String model, int length,boolean status) {
         int nr = 1;
         for (int i = 0; i < BoatArray.size() - 1; i++)
@@ -48,7 +41,7 @@ public class Member {
                 nr++;
                 i = 0;
             }
-        Boat temp = new Boat();
+        Boat temp;
         BoatArray.add(temp = new Boat(model, length, nr));
         if (!status) log.logboat(temp, uniqueId);
     }

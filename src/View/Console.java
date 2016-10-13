@@ -1,17 +1,13 @@
 package View;
 import Model.Boat;
-import Model.Member;
-import Model.ManageMember;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import Model.Start;
 /**
  * Created by carl on 2016-09-20.
  */
 public class Console {
-    static ManageMember manageMem = new ManageMember();
-    static Member member = new Member();
-    ArrayList<Member> memArray = new ArrayList<>();
+    Start start = new Start();
     ArrayList<Boat> boatArray = new ArrayList<>();
 
     public void testingMethod() {
@@ -36,35 +32,33 @@ public class Console {
             }
         }
     }
-    //Method not done
     public void compactList(){
-        memArray=manageMem.returnList();
 
-        for (int i = 0; i <memArray.size() ; i++) {
-            boatArray = memArray.get(i).returnBList();
-            System.out.println("Name : "+memArray.get(i).getName());
-            System.out.println("Unique ID: "+memArray.get(i).getUniqueId());
+        for (int i = 0; i < start.getObject().returnList().size() ; i++) {
+            boatArray = start.getObject().returnList().get(i).returnBList();
+            System.out.println("Name : "+start.getObject().returnList().get(i).getName());
+            System.out.println("Unique ID: "+start.getObject().returnList().get(i).getUniqueId());
             System.out.println("Number of boats: "+boatArray.size());
-            System.out.println("If you want to change this member please press "+i+"\n");
+            System.out.println("If you want to change this member please press "+i);
+            System.out.println("Current Index of this member :  "+(i)+"\n");
         }
     }
 
-    //Method not done
     public void verboseList(){
-        memArray=manageMem.returnList();
 
-        for (int i = 0; i <memArray.size() ; i++) {
-            boatArray = memArray.get(i).returnBList();
-            System.out.println("Name : "+memArray.get(i).getName());
-            System.out.println("Personal Security Number : "+memArray.get(i).getPersonNr());
-            System.out.println("Members Unique ID: "+memArray.get(i).getUniqueId());
-            System.out.println("Current Index of this member :  "+(i));
+        for (int i = 0; i <start.getObject().returnList().size() ; i++) {
+            boatArray = start.getObject().returnList().get(i).returnBList();
+            System.out.println("Name : "+start.getObject().returnList().get(i).getName());
+            System.out.println("Personal Security Number : "+start.getObject().returnList().get(i).getPersonNr());
+            System.out.println("Members Unique ID: "+start.getObject().returnList().get(i).getUniqueId());
+            System.out.println("Current Index of this member :  "+(i)+"\n");
 
             for (int j = 0; j < boatArray.size() ; j++) {
-                System.out.println("Boat nr "+ j);
-                System.out.println(boatArray.get(j).getType());
-                System.out.println(boatArray.get(j).getLength());
+                System.out.println("Boat nr : "+ j);
+                System.out.println("Boat model : "+boatArray.get(j).getType());
+                System.out.println("Boat length : "+boatArray.get(j).getLength()+"\n");
             }
+            System.out.println("\n");
         }
     }
 
@@ -81,10 +75,10 @@ public class Console {
             System.out.println("Enter boat length : \n");
             int length = scan.nextInt();
 
-            memArray.get(mIndex).changeBoat(boatArray.get(index),type,length);
+            start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
         }
         else if(userChoice==2){
-            memArray.get(mIndex).removeBoat(boatArray.get(index));
+            start.getObject().returnList().get(mIndex).removeBoat(boatArray.get(index));
         }
     }
 
@@ -101,12 +95,11 @@ public class Console {
 
             System.out.println("Enter members personal nr : ");
             int persNr = scan.nextInt();
-
-            manageMem.changeMem(memArray.get(index),name,persNr);
+            start.getObject().changeMem(start.getObject().returnList().get(index),name,persNr);
         }
 
         else if(userChoice==2){
-            manageMem.removeMem(memArray.get(index));
+            start.getObject().removeMem(start.getObject().returnList().get(index));
         }
     }
 
@@ -114,16 +107,16 @@ public class Console {
         Scanner scan1 = new Scanner(System.in);
 
         System.out.println("Enter members name : \n");
-        String name = scan1.next();
+        String name = scan1.nextLine();
 
         System.out.println("Enter members personal nr : \n");
         int persNr = scan1.nextInt();
 
-        manageMem.addMem(name, persNr,"");
+        start.getObject().addMem(name, persNr, "");
     }
     public void selectOrEmpty(){
         Scanner scan = new Scanner(System.in);
-        if(memArray.size()==0){
+        if(start.getObject().returnList().size()==0){
             System.out.println("There is no members yet \n");
         }else{
             System.out.println("\nIf you want to handle the member please enter the index of the member \n" +
@@ -142,12 +135,12 @@ public class Console {
                     memberInfo(mIndex);
                 }
                 else if(choiceToDo==2){
-                    if(memArray.get(mIndex).containsBoat()==true){
+                    if(start.getObject().returnList().get(mIndex).containsBoat()==true){
                         System.out.println("Choose which boat you want to handle by entering its index ! ");
                         int boatIndex=scan.nextInt();
                         boatInfo(boatIndex,mIndex);
                     }
-                    else if(memArray.get(mIndex).containsBoat()==false){
+                    else if(start.getObject().returnList().get(mIndex).containsBoat()==false){
                         // No boat yet entered
                         boatInfo(0,mIndex);
                     }
@@ -159,35 +152,28 @@ public class Console {
                 else if(choiceToDo==3){
                     System.out.println("Enter boat type : \n");
                     String boatType = scan.next();
-
                     System.out.println("Enter boat length : \n");
                     int boatLength = scan.nextInt();
-
-                    memArray.get(mIndex).addBoat(boatType,boatLength,false);
+                    start.getObject().returnList().get(mIndex).addBoat(boatType,boatLength,false);
 
                 }
                 else if(choiceToDo==4){
-                    memArray=manageMem.returnList();
-                    boatArray = memArray.get(mIndex).returnBList();
+                    boatArray = start.getObject().returnList().get(mIndex).returnBList();
                     System.out.println("Memberinfo and its boat/boats : \n");
-
-                    System.out.println("Name : "+memArray.get(mIndex).getName());
-                    System.out.println("Personal Security Number : "+memArray.get(mIndex).getPersonNr());
-                    System.out.println("Members Unique ID: \n"+memArray.get(mIndex).getUniqueId());
+                    System.out.println("Name : "+start.getObject().returnList().get(mIndex).getName());
+                    System.out.println("Personal Security Number : "+start.getObject().returnList().get(mIndex).getPersonNr());
+                    System.out.println("Members Unique ID: "+start.getObject().returnList().get(mIndex).getUniqueId()+"\n");
 
                     if(boatArray.size()>0){
                         for (int j = 0; j < boatArray.size() ; j++) {
                             System.out.println("Boat type : "+boatArray.get(j).getType());
-                            System.out.println("Boat length : \n"+boatArray.get(j).getLength());
+                            System.out.println("Boat length : "+boatArray.get(j).getLength()+"\n");
                         }
                     }
                     else {
                         System.out.println("User doesnt have any boats yet\n");
                     }
-
-
                 }
-
             }
         }
     }
