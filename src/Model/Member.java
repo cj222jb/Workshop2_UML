@@ -5,9 +5,9 @@ package Model;
  */
 import java.util.ArrayList;
 import java.util.UUID;
-
 public class Member {
     String uniqueId;
+    Log log = new Log();
     ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
@@ -37,8 +37,20 @@ public class Member {
         return this.uniqueId;
     }
 
-    public void addBoat(String model, int length){
-        BoatArray.add(new Boat(model,length));
+    public String returnName(){
+        return this.name;
+    }
+
+    public void addBoat(String model, int length,boolean status) {
+        int nr = 1;
+        for (int i = 0; i < BoatArray.size() - 1; i++)
+            if (nr == BoatArray.get(i).nr) {
+                nr++;
+                i = 0;
+            }
+        Boat temp = new Boat();
+        BoatArray.add(temp = new Boat(model, length, nr));
+        if (!status) log.logboat(temp, uniqueId);
     }
 
     public void changeBoat(Boat b , String model, int length){
