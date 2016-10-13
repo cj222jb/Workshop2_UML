@@ -54,7 +54,7 @@ public class Console {
             System.out.println("Current Index of this member :  "+(i)+"\n");
 
             for (int j = 0; j < boatArray.size() ; j++) {
-                System.out.println("Boat nr : "+ j);
+                System.out.println("Boat index : "+ j);
                 System.out.println("Boat model : "+boatArray.get(j).getType());
                 System.out.println("Boat length : "+boatArray.get(j).getLength()+"\n");
             }
@@ -136,6 +136,12 @@ public class Console {
                 }
                 else if(choiceToDo==2){
                     if(start.getObject().returnList().get(mIndex).containsBoat()==true){
+                        for (int j = 0; j < boatArray.size() ; j++) {
+                            System.out.println("Boat index : "+ j);
+                            System.out.println("Boat model : "+boatArray.get(j).getType());
+                            System.out.println("Boat length : "+boatArray.get(j).getLength()+"\n");
+                        }
+                        System.out.println("\n");
                         System.out.println("Choose which boat you want to handle by entering its index ! ");
                         int boatIndex=scan.nextInt();
                         boatInfo(boatIndex,mIndex);

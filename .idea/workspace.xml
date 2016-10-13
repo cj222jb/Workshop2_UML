@@ -2,20 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d1eb742-ab00-428e-bdbf-177ff48ae20a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Files/d70296aa-37b4-4b72-bf84-ebb522c41b4d/Member.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/f1951033-aedc-4e3c-96c1-71b079df1fd5/Boat_1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/f1951033-aedc-4e3c-96c1-71b079df1fd5/Boat_2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/f1951033-aedc-4e3c-96c1-71b079df1fd5/Member.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/fad1f553-d18a-457f-aa5e-b3e461d1876c/Boat_1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/fad1f553-d18a-457f-aa5e-b3e461d1876c/Member.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/fe8a7b38-ef5b-4b3a-a147-0c0380cb9688/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/0bb89eee-5139-4ba8-99dc-9ffa3e4cd026/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/6da6e565-eec3-4373-b231-34d738c8366a/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/7e38465c-7f4f-45e5-8ae5-9fe14d97e525/Boat_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/7e38465c-7f4f-45e5-8ae5-9fe14d97e525/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/a643148f-a42d-4672-9bb3-650598abdfe7/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/aebb1480-b5cf-4d8d-8d00-c56d978e6e8f/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/c573ae99-cfab-4a70-8f85-2f3cc44fd46d/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/d70296aa-37b4-4b72-bf84-ebb522c41b4d/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/db6bd861-5c04-48c7-9004-f1b713e65e67/Boat_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/db6bd861-5c04-48c7-9004-f1b713e65e67/Boat_2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/db6bd861-5c04-48c7-9004-f1b713e65e67/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/e3d72cec-a674-4568-a2a9-96a688116704/Boat_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/e3d72cec-a674-4568-a2a9-96a688116704/Member.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/f10f4d62-f87b-4fab-8361-4cf91d8afd33/Boat_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/f10f4d62-f87b-4fab-8361-4cf91d8afd33/Boat_2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Files/f10f4d62-f87b-4fab-8361-4cf91d8afd33/Member.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Boat.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Boat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/ManageMember.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/ManageMember.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Member.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Member.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Start.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/Model/Start.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Workshop2_UML/View/Console.class" afterPath="$PROJECT_DIR$/out/production/Workshop2_UML/View/Console.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Boat.java" afterPath="$PROJECT_DIR$/src/Model/Boat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ManageMember.java" afterPath="$PROJECT_DIR$/src/Model/ManageMember.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Member.java" afterPath="$PROJECT_DIR$/src/Model/Member.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Start.java" afterPath="$PROJECT_DIR$/src/Model/Start.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Console.java" afterPath="$PROJECT_DIR$/src/View/Console.java" />
     </list>
     <ignored path="Workshop2_UML.iws" />
@@ -38,7 +46,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Boat.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Boat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Boat.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -60,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Console.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Console.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/Console.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="365">
+              <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,11 +139,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/Model/Log.java" />
         <option value="$PROJECT_DIR$/src/View/MainProgram.java" />
-        <option value="$PROJECT_DIR$/src/View/Console.java" />
         <option value="$PROJECT_DIR$/src/Model/Start.java" />
         <option value="$PROJECT_DIR$/src/Model/ManageMember.java" />
         <option value="$PROJECT_DIR$/src/Model/Member.java" />
         <option value="$PROJECT_DIR$/src/Model/Boat.java" />
+        <option value="$PROJECT_DIR$/src/View/Console.java" />
       </list>
     </option>
   </component>
@@ -782,16 +790,16 @@
       <workItem from="1475753264398" duration="24238000" />
       <workItem from="1476273757248" duration="12419000" />
       <workItem from="1476351240262" duration="8397000" />
-      <workItem from="1476363409408" duration="2585000" />
+      <workItem from="1476363409408" duration="3016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47639000" />
+    <option name="totallyTimeSpent" value="48070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -801,7 +809,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30833334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30833334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1035,16 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Console.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Start.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -1091,6 +1089,16 @@
         <state relative-caret-position="289">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Console.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
