@@ -21,7 +21,7 @@ public class Console {
                     "For Compact List press c\n" +
                     "Add a new member press m ");
             Scanner scan = new Scanner(System.in);
-            String userChoice = scan.nextLine();
+            String userChoice = scan.next();
             if (userChoice.equals("v")){
                 verboseList();
                 selectOrEmpty();
@@ -68,26 +68,55 @@ public class Console {
         }
     }
 
-    public void memberInfo(int index){
+    public void boatInfo(int index,int mIndex){
         Scanner scan = new Scanner(System.in);
-        System.out.println("To change personal nr press 1 ");
-        System.out.println("To change name press 2 ");
-        System.out.println("To add a new boat press 3 ");
+        System.out.println("To add a new boat press 1 ");
+        System.out.println("To change a boat press 2 ");
+        System.out.println("To remove a boat press 3 ");
         int userChoice = scan.nextInt();
-        if (userChoice==1){
-
-        }
-        else if(userChoice==2){
-
-        }
-        else if(userChoice==3){
+         if(userChoice==1){
             System.out.println("Enter boat type : \n");
             String boatType = scan.next();
 
             System.out.println("Enter boat length : \n");
             int boatLength = scan.nextInt();
 
-            memArray.get(index).addBoat(boatType,boatLength);
+            memArray.get(mIndex).addBoat(boatType,boatLength);
+        }
+
+        else if(userChoice==2){
+            System.out.println("Enter boat type : \n");
+            String type = scan.next();
+
+            System.out.println("Enter boat length : \n");
+            int length = scan.nextInt();
+
+            memArray.get(mIndex).changeBoat(boatArray.get(index),type,length);
+        }
+        else if(userChoice==3){
+            memArray.get(mIndex).removeBoat(boatArray.get(index));
+        }
+    }
+
+    public void memberInfo(int index){
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("To change memberinfo press 1 ");
+        System.out.println("To change delete member press 2 ");
+        int userChoice = scan.nextInt();
+
+        if (userChoice==1){
+            System.out.println("Enter members name : \n");
+            String name = scan.next();
+
+            System.out.println("Enter members personal nr : \n");
+            int persNr = scan.nextInt();
+
+            manageMem.changeMem(memArray.get(index),name,persNr);
+        }
+
+        else if(userChoice==2){
+            manageMem.removeMem(memArray.get(index));
         }
     }
 
@@ -95,7 +124,7 @@ public class Console {
         Scanner scan1 = new Scanner(System.in);
 
         System.out.println("Enter members name : \n");
-        String name = scan1.nextLine();
+        String name = scan1.next();
 
         System.out.println("Enter members personal nr : \n");
         int persNr = scan1.nextInt();
@@ -107,13 +136,34 @@ public class Console {
         if(memArray.size()==0){
             System.out.println("There is no members yet \n");
         }else{
-            System.out.println("Enter desired Index of the member \n to handle it or press 99 to go back to main menu");
-            int index = scan.nextInt();
-            if(index==99){
+            System.out.println("Enter desired Index of the member \nto handle it or press 99 to go back to main menu");
+            int mIndex = scan.nextInt();
+            if(mIndex==99){
 //returns to main menu
             }
             else{
-                memberInfo(index);
+                System.out.println("If you want to handle memberinfo press 1 \n" +
+                        "if you want to handle boatinfo press 2 \n");
+                int memberOrBoat=scan.nextInt();
+                if ((memberOrBoat)==1){
+                    memberInfo(mIndex);
+                }
+                else if(memberOrBoat==2){
+                    if(memArray.get(mIndex).containsBoat()==true){
+                        System.out.println("Choose which boat you want to handle by entering its index ! ");
+                        int boatIndex=scan.nextInt();
+                        boatInfo(boatIndex,mIndex);
+                    }
+                    else if(memArray.get(mIndex).containsBoat()==false){
+                        // No boat yet entered
+                        boatInfo(0,mIndex);
+                    }
+                    else{
+                        System.out.println("hej2");
+                    }
+
+                }
+
             }
         }
     }

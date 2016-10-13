@@ -49,4 +49,10 @@ public class Member {
     public void removeBoat(Boat b){
         BoatArray.remove(b);
     }
+    public boolean containsBoat(){
+        if(BoatArray.size()==0){
+            return false;
+        }
+        return true;
+    }
 }
