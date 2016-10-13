@@ -8,16 +8,12 @@ public class ManageMember {
     Log log = new Log();
     ArrayList<Member> memArray = new ArrayList<>();
 
-    public void addMem(String name, int personalNum){
-        memArray.add(new Member(name, personalNum));
+    public void addMem(String name, int personalNum,String id){
+        memArray.add(new Member(name, personalNum,id));
 
     }
     public ArrayList<Member> returnList(){
         return memArray;
-    }
-
-    public void addMem(String name, int personalNum, int memberID){
-        memArray.add(new Member(name, personalNum));
     }
 
     public void changeMem(Member mem, String name, int personalNumber){

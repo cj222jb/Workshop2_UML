@@ -4,19 +4,22 @@ package Model;
  * Created by carl on 2016-10-06.
  */
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.UUID;
 
 public class Member {
-    String uniqueId= UUID.randomUUID().toString();
+    String uniqueId;
     ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
     int personalNum;
     int memberID;
 
-    public Member(String name, int personalNum){
+    public Member(String name, int personalNum,String id){
         this.name=name;
         this.personalNum=personalNum;
+        if(id=="")
+            uniqueId= UUID.randomUUID().toString();
+            else
+            uniqueId=id;
     }
     public Member(){
     }

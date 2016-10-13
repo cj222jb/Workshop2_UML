@@ -8,9 +8,6 @@ public class Boat {
         this.model=model;
         this.length=length;
     }
-    public Boat(){
-    }
-
     public String getType(){
         return this.model;
     }
