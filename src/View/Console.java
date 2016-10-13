@@ -1,8 +1,9 @@
 package View;
 import Model.Boat;
+import Model.Start;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-import Model.Start;
 /**
  * Created by carl on 2016-09-20.
  */
@@ -88,11 +89,11 @@ public class Console {
         System.out.println("To change memberinfo press 1 ");
         System.out.println("To delete member press 2 ");
         int userChoice = scan.nextInt();
+        scan.nextLine();
 
         if (userChoice==1){
             System.out.println("Enter members name : ");
-            String name = scan.next();
-
+            String name = scan.nextLine();
             System.out.println("Enter members personal nr : ");
             int persNr = scan.nextInt();
             start.getObject().changeMem(start.getObject().returnList().get(index),name,persNr);

@@ -49,9 +49,11 @@ public class Member {
     public void changeBoat(Boat b , String model, int length){
         BoatArray.get(BoatArray.indexOf(b)).model = model;
         BoatArray.get(BoatArray.indexOf(b)).length = length;
+        log.changeBoat(b,uniqueId,length,model);
     }
 
     public void removeBoat(Boat b){
+        log.removeBoat(b,uniqueId);
         BoatArray.remove(b);
     }
     public boolean containsBoat(){

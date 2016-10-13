@@ -18,7 +18,7 @@ public class ManageMember {
     }
 
     public void changeMem(Member mem, String name, int personalNumber){
-        log.changeMem(mem.name,mem.personalNum,mem.uniqueId);
+        log.changeMem(name,personalNumber,mem.uniqueId);
         memArray.get(memArray.indexOf(mem)).name = name;
         memArray.get(memArray.indexOf(mem)).personalNum = personalNumber;
     }

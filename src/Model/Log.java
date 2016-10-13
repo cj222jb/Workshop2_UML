@@ -118,22 +118,22 @@ public class Log {
 
     }
 
-    public void changeBoat(Boat boat, String memID){
+    public void changeBoat(Boat boat, String memID,int newLength, String newModel){
 
         BufferedWriter writer = null;
-        String boatID = "";
+        int boatID = boat.nr;
         String mapID = "Files\\"+memID;
         String filename = mapID+"\\"+"Boat_"+boatID+".txt";
         File file = new File(filename);
-        file.delete();
 
+        file.delete();
 
         File file2 = new File(filename);
         try {
             writer = new BufferedWriter(new FileWriter(file2));
 
-            writer.write(boat.model+">"+boat.length);
-
+            writer.write(newModel+">"+newLength);
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
