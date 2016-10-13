@@ -13,6 +13,17 @@ public class Member {
     int personalNum;
     int memberID;
 
+    public Member(String name, int personalNum,String id){
+        this.name=name;
+        this.personalNum=personalNum;
+        if(id=="")
+            uniqueId= UUID.randomUUID().toString();
+            else
+            uniqueId=id;
+    }
+    public Member(){
+    }
+
     public ArrayList<Boat> returnBList(){
         return BoatArray;
     }
@@ -26,16 +37,6 @@ public class Member {
         return this.uniqueId;
     }
 
-    public Member(String name, int personalNum,String id){
-        this.name=name;
-        this.personalNum=personalNum;
-        if(id=="")
-            uniqueId = UUID.randomUUID().toString();
-        else uniqueId = id;
-    }
-    public Member(){
-
-    }
     public String returnName(){
         return this.name;
     }

@@ -12,12 +12,10 @@ public class ManageMember {
         Member temp = new Member();
         memArray.add(temp = new Member(name, personalNum,id));
         log.logMem(temp);
-
     }
     public ArrayList<Member> returnList(){
         return memArray;
     }
-
 
     public void changeMem(Member mem, String name, int personalNumber){
         log.changeMem(mem.name,mem.personalNum,mem.uniqueId);
