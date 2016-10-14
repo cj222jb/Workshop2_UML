@@ -3,18 +3,26 @@ import Model.Boat;
 import Model.ErrorHandling;
 import Model.Start;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  * Created by carl on 2016-09-20.
  */
-public class Console {
-    Start start = new Start();
-    ArrayList<Boat> boatArray = new ArrayList<>();
-    ErrorHandling err = new ErrorHandling();
 
-    public void startOfConsole() {
+public class Console {
+    static Start start = new Start();
+    static ArrayList<Boat> boatArray = new ArrayList<>();
+    static ErrorHandling err = new ErrorHandling();
+
+
+
+    public static void main(String[] args) throws IOException {
+    start.loadFromFiles();
+        startOfConsole();
+    }
+    public static void startOfConsole() {
         while(true){
             System.out.println("For Verbose List press v\n" +
                     "For Compact List press c\n" +
@@ -39,7 +47,7 @@ public class Console {
             }
         }
     }
-    public void compactList(){
+    public static void compactList(){
 
         for (int i = 0; i < start.getObject().returnList().size() ; i++) {
             boatArray = start.getObject().returnList().get(i).returnBList();
@@ -51,7 +59,7 @@ public class Console {
         }
     }
 
-    public void verboseList(){
+    public static void verboseList(){
 
         for (int i = 0; i <start.getObject().returnList().size() ; i++) {
             boatArray = start.getObject().returnList().get(i).returnBList();
@@ -69,7 +77,7 @@ public class Console {
         }
     }
 
-    public void boatInfo(int index,int mIndex){
+    public static void boatInfo(int index,int mIndex){
         boolean status = true;
         Scanner scan = new Scanner(System.in);
         System.out.println("To change a boat press 1 ");
@@ -96,7 +104,7 @@ public class Console {
         }
     }
 
-    public void memberInfo(int index){
+    public static void memberInfo(int index){
         Scanner scan = new Scanner(System.in);
         System.out.println("To change memberinfo press 1 ");
         System.out.println("To delete member press 2 ");
@@ -115,7 +123,7 @@ public class Console {
             start.getObject().removeMem(start.getObject().returnList().get(index));
         }
     }
-    public void createMem() {
+    public static void createMem() {
 
         Scanner scan1 = new Scanner(System.in);
         boolean status = true;
@@ -141,7 +149,7 @@ public class Console {
         }
     }
 
-    public void selectOrEmpty() {
+    public static void selectOrEmpty() {
         Scanner scan = new Scanner(System.in);
         if (start.getObject().returnList().size() == 0) {
             System.out.println("There is no members yet \n");

@@ -8,23 +8,22 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Start {
-
-
     static Console c = new Console();
     public static ManageMember manageMem = new ManageMember();
-    public static void main(String[] args) throws IOException {
+public static void loadFromFiles() throws IOException {
 
+    File files = new File("Files");
+        if(files.exists()&&files.isDirectory()&&files.list().length>0)
 
-        File files = new File("Files");
-        if (files.exists() && files.isDirectory() && files.list().length>0) {
-            loadLog();
-        }else{
-            files.mkdir();
-        }
+    {
+        loadLog();
+    }else
 
-        c.startOfConsole();
+    {
+        files.mkdir();
     }
 
+}
 
     public static void loadLog() throws IOException {
         File path = new File("Files");
@@ -59,8 +58,6 @@ public class Start {
             return manageMem;
         }
     }
-
-
 
 
 
