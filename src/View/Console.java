@@ -107,10 +107,10 @@ public class Console {
     public void createMem(){
         Scanner scan1 = new Scanner(System.in);
 
-        System.out.println("Enter members name : \n");
+        System.out.println("Enter members name : ");
         String name = scan1.nextLine();
 
-        System.out.println("Enter members personal nr : \n");
+        System.out.println("Enter members personal nr : ");
         int persNr = scan1.nextInt();
 
         start.getObject().addMem(name, persNr, "");
@@ -132,6 +132,7 @@ public class Console {
                         "if you want to add a boat press 3 \n"+
                         "if you want to print member info press 4 \n");
                 int choiceToDo=scan.nextInt();
+                scan.nextLine();
                 if ((choiceToDo)==1){
                     memberInfo(mIndex);
                 }
@@ -157,9 +158,9 @@ public class Console {
 
                 }
                 else if(choiceToDo==3){
-                    System.out.println("Enter boat type : \n");
-                    String boatType = scan.next();
-                    System.out.println("Enter boat length : \n");
+                    System.out.println("Enter boat type : ");
+                    String boatType = scan.nextLine();
+                    System.out.println("Enter boat length : ");
                     int boatLength = scan.nextInt();
                     start.getObject().returnList().get(mIndex).addBoat(boatType,boatLength,false);
 
