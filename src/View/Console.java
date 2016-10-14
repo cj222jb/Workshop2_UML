@@ -34,6 +34,9 @@ public class Console {
             else if(userChoice.equals("m")){
                 createMem();
             }
+            else{
+                System.err.println("Choose one of the valid options");
+            }
         }
     }
     public void compactList(){
@@ -84,6 +87,7 @@ public class Console {
                 status = false;
                 boatInfo(index, mIndex);
             }
+
             if(status)
                 start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
         }
@@ -102,7 +106,7 @@ public class Console {
         if (userChoice==1){
             System.out.println("Enter members name : ");
             String name = scan.nextLine();
-            System.out.println("Enter members personal nr : ");
+            System.out.println("Enter members personal nr with numbers only : ");
             Long persNr = scan.nextLong();
             start.getObject().changeMem(start.getObject().returnList().get(index),name,persNr);
         }
@@ -111,11 +115,11 @@ public class Console {
             start.getObject().removeMem(start.getObject().returnList().get(index));
         }
     }
-
     public void createMem() {
+
         Scanner scan1 = new Scanner(System.in);
         boolean status = true;
-        System.out.println("Enter members name : ");
+        System.out.println("Enter members name  : ");
         String name = scan1.nextLine();
         if (err.isName(name) == false) {
             System.err.println("Members name cant contain number or special characters , " +
@@ -123,7 +127,7 @@ public class Console {
                     "Please enter again\n");
             createMem();
         } else {
-            System.out.println("Enter members personal nr : ");
+            System.out.println("Enter members personal nr with numbers only : ");
             long persNr = 0;
             try {
                 persNr = scan1.nextLong();
@@ -132,9 +136,8 @@ public class Console {
                 status = false;
                 createMem();
             }
-
-                if(status)
-                    start.getObject().addMem(name, persNr, "");
+            if(status)
+                start.getObject().addMem(name, persNr, "");
         }
     }
 
@@ -143,7 +146,7 @@ public class Console {
         if (start.getObject().returnList().size() == 0) {
             System.out.println("There is no members yet \n");
         } else {
-            System.out.println("\nIf you want to handle the member please enter the index of the member \n" +
+            System.out.println("\nIf you want to handle the member,\nplease enter the index of the member \n" +
                     "If you want to return to the main menu press 99");
             int mIndex = scan.nextInt();
             if (mIndex == 99) {
@@ -169,10 +172,13 @@ public class Console {
                         System.out.println("\n");
                         System.out.println("Choose which boat you want to handle by entering its index ! ");
                         int boatIndex = scan.nextInt();
-                        boatInfo(boatIndex, mIndex);
+                        if(boatIndex+1>boatArray.size()){
+                            System.err.println("There is no boat on index : "+boatIndex);
+                        }else {
+                            boatInfo(boatIndex, mIndex);
+                        }
                     } else if (start.getObject().returnList().get(mIndex).containsBoat() == false) {
-                        // No boat yet entered
-                        boatInfo(0, mIndex);
+                        System.err.println("You dont have any boats yet");
                     }
                 } else if (choiceToDo == 3) {
                     boolean status = true;
@@ -185,6 +191,7 @@ public class Console {
                     } catch (InputMismatchException e) {
                         System.err.println("Incorrect format of boat lenght");
                         status = false;
+
                         selectOrEmpty();
                     }
 
