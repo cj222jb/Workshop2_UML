@@ -110,12 +110,19 @@ public class Console {
 
         System.out.println("Enter members name : ");
         String name = scan1.nextLine();
+        if(err.isName(name)==false) {
+            System.out.println("Members name cant contain number or special characters , " +
+                    "\nneither can it be empty!\n" +
+                    "Please enter again\n");
+            createMem();
+        }
+        else {
+            System.out.println("Enter members personal nr : ");
+            long persNr = scan1.nextLong();
 
-        System.out.println("Enter members personal nr : ");
-        long persNr = scan1.nextLong();
-
-        start.getObject().addMem(name, persNr, "");
-    }
+            start.getObject().addMem(name, persNr, "");
+        }
+        }
     public void selectOrEmpty(){
         Scanner scan = new Scanner(System.in);
         if(start.getObject().returnList().size()==0){
@@ -129,7 +136,7 @@ public class Console {
 //returns to main menu
             }
             else if(mIndex>start.getObject().returnList().size()){
-                System.out.println("There is no member on place "+mIndex);
+                System.out.println("There is no member on place "+mIndex+"\n");
             }
 
             else{
