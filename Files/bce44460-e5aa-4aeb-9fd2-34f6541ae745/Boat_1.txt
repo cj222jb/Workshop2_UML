@@ -1,1 +1,1 @@
-Motorbåt>15
+Sailboat>12.2

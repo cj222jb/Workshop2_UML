@@ -10,9 +10,9 @@ public class Member {
     Log log = new Log();
     ArrayList<Boat> BoatArray = new ArrayList<>();
     String name;
-    int personalNum;
+    long personalNum;
 
-    public Member(String name, int personalNum,String id){
+    public Member(String name, long personalNum,String id){
         this.name=name;
         this.personalNum=personalNum;
         if(id=="")
@@ -27,14 +27,14 @@ public class Member {
     public String getName(){
         return this.name;
     }
-    public int getPersonNr(){
+    public long getPersonNr(){
         return this.personalNum;
     }
     public String getUniqueId(){
         return this.uniqueId;
     }
 
-    public void addBoat(String model, int length,boolean status) {
+    public void addBoat(String model, double length,boolean status) {
         int nr = 1;
         for (int i = 0; i < BoatArray.size() - 1; i++)
             if (nr == BoatArray.get(i).nr) {
@@ -46,7 +46,7 @@ public class Member {
         if (!status) log.logboat(temp, uniqueId);
     }
 
-    public void changeBoat(Boat b , String model, int length){
+    public void changeBoat(Boat b , String model, double length){
         BoatArray.get(BoatArray.indexOf(b)).model = model;
         BoatArray.get(BoatArray.indexOf(b)).length = length;
         log.changeBoat(b,uniqueId,length,model);
