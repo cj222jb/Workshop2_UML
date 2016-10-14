@@ -172,7 +172,14 @@ public class Console {
                     System.out.println("Enter boat type : ");
                     String boatType = scan.nextLine();
                     System.out.println("Enter boat length : ");
-                    double boatLength = scan.nextDouble();
+                    double boatLength = 0;
+                    try{
+                        boatLength = scan.nextDouble();
+                    }catch (InputMismatchException e){
+                        System.err.println("Incorrect format of boat lenght");
+                        selectOrEmpty();
+                    }
+
                     start.getObject().returnList().get(mIndex).addBoat(boatType,boatLength,false);
 
                 }
