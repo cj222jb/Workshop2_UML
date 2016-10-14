@@ -80,7 +80,14 @@ public class Console {
             String type = scan.next();
 
             System.out.println("Enter boat length : \n");
-            double length = scan.nextDouble();
+            double length = 0;
+            try{
+                length = scan.nextDouble();
+            }catch(InputMismatchException e){
+                System.err.println("Incorrect format of length");
+                boatInfo(index, mIndex);
+            }
+
 
             start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
         }
