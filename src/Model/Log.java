@@ -7,7 +7,6 @@ import java.io.*;
  */
 public class Log {
 
-
     public void logboat(Boat boat, String memID) {
         int nr = boat.nr;
         String mapID = "Files\\"+memID;
@@ -21,7 +20,6 @@ public class Log {
             f = new File(filename);
         }
         try {
-
             File file = new File(filename);
             writer = new BufferedWriter(new FileWriter(file));
             writer.write(boat.model+">"+boat.length);
@@ -38,14 +36,9 @@ public class Log {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
-
-
-
     public void logMem(Member mem) {
-
         String mapID = "Files\\"+mem.uniqueId;
         File map = new File(mapID);
         map.mkdir();
@@ -68,8 +61,6 @@ public class Log {
 
         }
     }
-
-
     public boolean removeBoat(Boat boat,String memID) {
 
         int boatID = boat.nr;
@@ -82,18 +73,18 @@ public class Log {
 
         return remov;
     }
-
     public void removeMember(String memID) {
         String mapID = "Files\\" + memID;
         File file = new File(mapID);
-            File[] entries = file.listFiles();
+        File[] entries = file.listFiles();
 
         for(int i=0;i<entries.length;i++){
             File currentFile = new File(entries[i].getAbsolutePath());
             currentFile.delete();
-             }
-            file.delete();
+        }
+        file.delete();
     }
+
 
 
 
@@ -115,7 +106,6 @@ public class Log {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public void changeBoat(Boat boat, String memID,double newLength, String newModel){
@@ -138,7 +128,5 @@ public class Log {
             e.printStackTrace();
         }
     }
-
-
 }
 
