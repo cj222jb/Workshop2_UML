@@ -29,27 +29,4 @@ public class ErrorHandling {
         }
         return true;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public boolean checkPersonalNum(Long personalNum){
-        String temp = personalNum.toString();
-        System.out.println(temp);
-        Pattern p = Pattern.compile("[^0-9 ]", Pattern.CASE_INSENSITIVE);
-        Matcher m = p.matcher(temp);
-        boolean status = m.find();
-
-        return status;
-    }
-
 }

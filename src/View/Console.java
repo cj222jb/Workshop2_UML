@@ -16,8 +16,6 @@ public class Console {
     ErrorHandling err = new ErrorHandling();
 
     public void testingMethod() {
-        long test = 94123;
-        System.out.println(err.checkPersonalNum(test));
         while(true){
             System.out.println("For Verbose List press v\n" +
                     "For Compact List press c\n" +
