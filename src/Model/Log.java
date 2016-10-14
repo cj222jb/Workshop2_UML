@@ -84,7 +84,11 @@ public class Log {
         }
         file.delete();
     }
-    public void changeMem(String name , int num,String id){
+
+
+
+
+    public void changeMem(String name , long num,String id){
 
         BufferedWriter writer = null;
         String mapID = "Files\\"+id;
@@ -103,7 +107,8 @@ public class Log {
             e.printStackTrace();
         }
     }
-    public void changeBoat(Boat boat, String memID,int newLength, String newModel){
+
+    public void changeBoat(Boat boat, String memID,double newLength, String newModel){
 
         BufferedWriter writer = null;
         int boatID = boat.nr;

@@ -42,8 +42,8 @@ public class Start {
                     while ((myLine = buf.readLine()) != null) {
                         String[] array1 = myLine.split(">");
                             if (j == temp.length - 1) {
-                                manageMem.addMem(array1[2], Integer.parseInt(array1[1]),array1[0]);
-                            } else {manageMem.memArray.get(i).addBoat(array1[0], Integer.parseInt(array1[1]),true);}
+                                manageMem.addMem(array1[2], Long.parseLong(array1[1]),array1[0]);
+                            } else {manageMem.memArray.get(i).addBoat(array1[0], Double.parseDouble(array1[1]),true);}
 
                         }
                         buf.close();

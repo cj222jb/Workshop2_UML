@@ -76,7 +76,7 @@ public class Console {
             String type = scan.next();
 
             System.out.println("Enter boat length : \n");
-            int length = scan.nextInt();
+            double length = scan.nextDouble();
 
             start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
         }
@@ -96,7 +96,7 @@ public class Console {
             System.out.println("Enter members name : ");
             String name = scan.nextLine();
             System.out.println("Enter members personal nr : ");
-            int persNr = scan.nextInt();
+            Long persNr = scan.nextLong();
             start.getObject().changeMem(start.getObject().returnList().get(index),name,persNr);
         }
 
@@ -112,14 +112,14 @@ public class Console {
         String name = scan1.nextLine();
 
         System.out.println("Enter members personal nr : ");
-        int persNr = scan1.nextInt();
+        long persNr = scan1.nextLong();
 
         start.getObject().addMem(name, persNr, "");
     }
     public void selectOrEmpty(){
         Scanner scan = new Scanner(System.in);
         if(start.getObject().returnList().size()==0){
-            System.err.println("There is no members yet \n");
+            System.out.println("There is no members yet \n");
         }
         else{
             System.out.println("\nIf you want to handle the member please enter the index of the member \n" +
@@ -163,7 +163,7 @@ public class Console {
                     System.out.println("Enter boat type : ");
                     String boatType = scan.nextLine();
                     System.out.println("Enter boat length : ");
-                    int boatLength = scan.nextInt();
+                    double boatLength = scan.nextDouble();
                     start.getObject().returnList().get(mIndex).addBoat(boatType,boatLength,false);
 
                 }
