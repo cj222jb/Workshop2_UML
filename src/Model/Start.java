@@ -22,7 +22,7 @@ public class Start {
             files.mkdir();
         }
 
-        c.testingMethod();
+        c.startOfConsole();
     }
 
     public static void loadLog() throws IOException {

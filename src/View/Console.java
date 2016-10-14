@@ -14,7 +14,7 @@ public class Console {
     ArrayList<Boat> boatArray = new ArrayList<>();
     ErrorHandling err = new ErrorHandling();
 
-    public void testingMethod() {
+    public void startOfConsole() {
         while(true){
             System.out.println("For Verbose List press v\n" +
                     "For Compact List press c\n" +
