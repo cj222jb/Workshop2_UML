@@ -115,7 +115,7 @@ public class Console {
 
     public void createMem() {
         Scanner scan1 = new Scanner(System.in);
-
+        boolean status = true;
         System.out.println("Enter members name : ");
         String name = scan1.nextLine();
         if (err.isName(name) == false) {
@@ -130,10 +130,12 @@ public class Console {
                 persNr = scan1.nextLong();
             } catch (InputMismatchException e) {
                 System.err.println("Incorrect format");
+                status = false;
                 createMem();
             }
 
-                start.getObject().addMem(name, persNr, "");
+                if(status)
+                    start.getObject().addMem(name, persNr, "");
         }
     }
 
