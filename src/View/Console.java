@@ -67,26 +67,25 @@ public class Console {
     }
 
     public void boatInfo(int index,int mIndex){
+        boolean status = true;
         Scanner scan = new Scanner(System.in);
         System.out.println("To change a boat press 1 ");
         System.out.println("To remove a boat press 2 ");
         int userChoice = scan.nextInt();
-
         if(userChoice==1){
             System.out.println("Enter boat type : \n");
             String type = scan.next();
-
             System.out.println("Enter boat length : \n");
             double length = 0;
             try{
                 length = scan.nextDouble();
             }catch(InputMismatchException e){
                 System.err.println("Incorrect format of length");
+                status = false;
                 boatInfo(index, mIndex);
             }
-
-
-            start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
+            if(status)
+                start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
         }
         else if(userChoice==2){
             start.getObject().returnList().get(mIndex).removeBoat(boatArray.get(index));
@@ -176,6 +175,7 @@ public class Console {
                         boatInfo(0, mIndex);
                     }
                 } else if (choiceToDo == 3) {
+                    boolean status = true;
                     System.out.println("Enter boat type : ");
                     String boatType = scan.nextLine();
                     System.out.println("Enter boat length : ");
@@ -184,10 +184,12 @@ public class Console {
                         boatLength = scan.nextDouble();
                     } catch (InputMismatchException e) {
                         System.err.println("Incorrect format of boat lenght");
+                        status = false;
                         selectOrEmpty();
                     }
 
-                    start.getObject().returnList().get(mIndex).addBoat(boatType, boatLength, false);
+                    if(status)
+                        start.getObject().returnList().get(mIndex).addBoat(boatType, boatLength, false);
 
                 } else if (choiceToDo == 4) {
                     boatArray = start.getObject().returnList().get(mIndex).returnBList();
