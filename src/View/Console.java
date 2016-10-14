@@ -3,7 +3,9 @@ import Model.Boat;
 import Model.ErrorHandling;
 import Model.Start;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  * Created by carl on 2016-09-20.
@@ -14,6 +16,8 @@ public class Console {
     ErrorHandling err = new ErrorHandling();
 
     public void testingMethod() {
+        long test = 94123;
+        System.out.println(err.checkPersonalNum(test));
         while(true){
             System.out.println("For Verbose List press v\n" +
                     "For Compact List press c\n" +
@@ -76,7 +80,14 @@ public class Console {
             String type = scan.next();
 
             System.out.println("Enter boat length : \n");
-            double length = scan.nextDouble();
+            double length = 0;
+            try{
+                length = scan.nextDouble();
+            }catch(InputMismatchException e){
+                System.err.println("Incorrect format of length");
+                boatInfo(index, mIndex);
+            }
+
 
             start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
         }
@@ -105,89 +116,92 @@ public class Console {
         }
     }
 
-    public void createMem(){
+    public void createMem() {
         Scanner scan1 = new Scanner(System.in);
 
         System.out.println("Enter members name : ");
         String name = scan1.nextLine();
-        if(err.isName(name)==false) {
+        if (err.isName(name) == false) {
             System.out.println("Members name cant contain number or special characters , " +
                     "\nneither can it be empty!\n" +
                     "Please enter again\n");
             createMem();
-        }
-        else {
+        } else {
             System.out.println("Enter members personal nr : ");
-            long persNr = scan1.nextLong();
-
+            long persNr = 0;
+            try {
+                persNr = scan1.nextLong();
+            } catch (InputMismatchException e) {
+                System.err.println("Incorrect format");
+                createMem();
+            }
             start.getObject().addMem(name, persNr, "");
         }
-        }
-    public void selectOrEmpty(){
+    }
+
+    public void selectOrEmpty() {
         Scanner scan = new Scanner(System.in);
-        if(start.getObject().returnList().size()==0){
+        if (start.getObject().returnList().size() == 0) {
             System.out.println("There is no members yet \n");
-        }
-        else{
+        } else {
             System.out.println("\nIf you want to handle the member please enter the index of the member \n" +
                     "If you want to return to the main menu press 99");
             int mIndex = scan.nextInt();
-            if(mIndex==99){
+            if (mIndex == 99) {
 //returns to main menu
-            }
-            else if(mIndex>start.getObject().returnList().size()){
-                System.out.println("There is no member on place "+mIndex+"\n");
-            }
-
-            else{
+            } else if (mIndex > start.getObject().returnList().size()) {
+                System.out.println("There is no member on place " + mIndex + "\n");
+            } else {
                 System.out.println("If you want to handle memberinfo press 1 \n" +
-                        "if you want to handle boatinfo press 2 \n"+
-                        "if you want to add a boat press 3 \n"+
+                        "if you want to handle boatinfo press 2 \n" +
+                        "if you want to add a boat press 3 \n" +
                         "if you want to print member info press 4 \n");
-                int choiceToDo=scan.nextInt();
+                int choiceToDo = scan.nextInt();
                 scan.nextLine();
-                if ((choiceToDo)==1){
+                if ((choiceToDo) == 1) {
                     memberInfo(mIndex);
-                }
-                else if(choiceToDo==2){
-                    if(start.getObject().returnList().get(mIndex).containsBoat()==true){
-                        for (int j = 0; j < boatArray.size() ; j++) {
-                            System.out.println("Boat index : "+ j);
-                            System.out.println("Boat model : "+boatArray.get(j).getType());
-                            System.out.println("Boat length : "+boatArray.get(j).getLength()+"\n");
+                } else if (choiceToDo == 2) {
+                    if (start.getObject().returnList().get(mIndex).containsBoat() == true) {
+                        for (int j = 0; j < boatArray.size(); j++) {
+                            System.out.println("Boat index : " + j);
+                            System.out.println("Boat model : " + boatArray.get(j).getType());
+                            System.out.println("Boat length : " + boatArray.get(j).getLength() + "\n");
                         }
                         System.out.println("\n");
                         System.out.println("Choose which boat you want to handle by entering its index ! ");
-                        int boatIndex=scan.nextInt();
-                        boatInfo(boatIndex,mIndex);
-                    }
-                    else if(start.getObject().returnList().get(mIndex).containsBoat()==false){
+                        int boatIndex = scan.nextInt();
+                        boatInfo(boatIndex, mIndex);
+                    } else if (start.getObject().returnList().get(mIndex).containsBoat() == false) {
                         // No boat yet entered
-                        boatInfo(0,mIndex);
+                        boatInfo(0, mIndex);
                     }
-                }
-                else if(choiceToDo==3){
+                } else if (choiceToDo == 3) {
                     System.out.println("Enter boat type : ");
                     String boatType = scan.nextLine();
                     System.out.println("Enter boat length : ");
-                    double boatLength = scan.nextDouble();
-                    start.getObject().returnList().get(mIndex).addBoat(boatType,boatLength,false);
+                    double boatLength = 0;
+                    try {
+                        boatLength = scan.nextDouble();
+                    } catch (InputMismatchException e) {
+                        System.err.println("Incorrect format of boat lenght");
+                        selectOrEmpty();
+                    }
 
-                }
-                else if(choiceToDo==4){
+                    start.getObject().returnList().get(mIndex).addBoat(boatType, boatLength, false);
+
+                } else if (choiceToDo == 4) {
                     boatArray = start.getObject().returnList().get(mIndex).returnBList();
                     System.out.println("Memberinfo and its boat/boats : \n");
-                    System.out.println("Name : "+start.getObject().returnList().get(mIndex).getName());
-                    System.out.println("Personal Security Number : "+start.getObject().returnList().get(mIndex).getPersonNr());
-                    System.out.println("Members Unique ID: "+start.getObject().returnList().get(mIndex).getUniqueId()+"\n");
+                    System.out.println("Name : " + start.getObject().returnList().get(mIndex).getName());
+                    System.out.println("Personal Security Number : " + start.getObject().returnList().get(mIndex).getPersonNr());
+                    System.out.println("Members Unique ID: " + start.getObject().returnList().get(mIndex).getUniqueId() + "\n");
 
-                    if(boatArray.size()>0){
-                        for (int j = 0; j < boatArray.size() ; j++) {
-                            System.out.println("Boat type : "+boatArray.get(j).getType());
-                            System.out.println("Boat length : "+boatArray.get(j).getLength()+"\n");
+                    if (boatArray.size() > 0) {
+                        for (int j = 0; j < boatArray.size(); j++) {
+                            System.out.println("Boat type : " + boatArray.get(j).getType());
+                            System.out.println("Boat length : " + boatArray.get(j).getLength() + "\n");
                         }
-                    }
-                    else {
+                    } else {
                         System.out.println("User doesnt have any boats yet\n");
                     }
                 }
