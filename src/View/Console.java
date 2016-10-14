@@ -3,7 +3,6 @@ import Model.Boat;
 import Model.ErrorHandling;
 import Model.Start;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -120,7 +119,7 @@ public class Console {
         System.out.println("Enter members name : ");
         String name = scan1.nextLine();
         if (err.isName(name) == false) {
-            System.out.println("Members name cant contain number or special characters , " +
+            System.err.println("Members name cant contain number or special characters , " +
                     "\nneither can it be empty!\n" +
                     "Please enter again\n");
             createMem();
@@ -133,7 +132,8 @@ public class Console {
                 System.err.println("Incorrect format");
                 createMem();
             }
-            start.getObject().addMem(name, persNr, "");
+
+                start.getObject().addMem(name, persNr, "");
         }
     }
 
