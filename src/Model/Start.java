@@ -25,6 +25,7 @@ public class Start {
         c.startOfConsole();
     }
 
+
     public static void loadLog() throws IOException {
         File path = new File("Files");
         File[] files = path.listFiles();
