@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by carl on 2016-09-27.
  */
@@ -22,6 +25,28 @@ public class ErrorHandling {
         System.out.println("NO ERROR");
         return false;
 
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public boolean checkPersonalNum(Long personalNum){
+        String temp = personalNum.toString();
+        System.out.println(temp);
+        Pattern p = Pattern.compile("[^0-9 ]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(temp);
+        boolean status = m.find();
+
+        return status;
     }
 
 }

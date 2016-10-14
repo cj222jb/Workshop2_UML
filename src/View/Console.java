@@ -3,7 +3,9 @@ import Model.Boat;
 import Model.ErrorHandling;
 import Model.Start;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  * Created by carl on 2016-09-20.
@@ -14,6 +16,8 @@ public class Console {
     ErrorHandling err = new ErrorHandling();
 
     public void testingMethod() {
+        long test = 94123;
+        System.out.println(err.checkPersonalNum(test));
         while(true){
             System.out.println("For Verbose List press v\n" +
                     "For Compact List press c\n" +
@@ -112,8 +116,13 @@ public class Console {
         String name = scan1.nextLine();
 
         System.out.println("Enter members personal nr : ");
-        long persNr = scan1.nextLong();
-
+        long persNr = 0;
+        try{
+            persNr = scan1.nextLong();
+        }catch (InputMismatchException e){
+            System.err.println("Incorrect format");
+            createMem();
+        }
         start.getObject().addMem(name, persNr, "");
     }
     public void selectOrEmpty(){
