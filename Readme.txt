@@ -1,8 +1,3 @@
-Due to poor time-management we are not done yet.
-Some methods works but are a bit buggy.
-Some methods are not completley done.
+Run instructions:
 
-There should be enough done to test the program.
-
-
-We appreciate any feedback given!
+Clone repository, open "Start.java" in any javaprogram e.g. IntelliJ then run and compile. The user interface will then guide you.
