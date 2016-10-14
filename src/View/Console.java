@@ -1,5 +1,6 @@
 package View;
 import Model.Boat;
+import Model.ErrorHandling;
 import Model.Start;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class Console {
     Start start = new Start();
     ArrayList<Boat> boatArray = new ArrayList<>();
+    ErrorHandling err = new ErrorHandling();
 
     public void testingMethod() {
         while(true){
@@ -84,7 +86,6 @@ public class Console {
     }
 
     public void memberInfo(int index){
-
         Scanner scan = new Scanner(System.in);
         System.out.println("To change memberinfo press 1 ");
         System.out.println("To delete member press 2 ");
@@ -118,14 +119,19 @@ public class Console {
     public void selectOrEmpty(){
         Scanner scan = new Scanner(System.in);
         if(start.getObject().returnList().size()==0){
-            System.out.println("There is no members yet \n");
-        }else{
+            System.err.println("There is no members yet \n");
+        }
+        else{
             System.out.println("\nIf you want to handle the member please enter the index of the member \n" +
                     "If you want to return to the main menu press 99");
             int mIndex = scan.nextInt();
             if(mIndex==99){
 //returns to main menu
             }
+            else if(mIndex>start.getObject().returnList().size()){
+                System.out.println("There is no member on place "+mIndex);
+            }
+
             else{
                 System.out.println("If you want to handle memberinfo press 1 \n" +
                         "if you want to handle boatinfo press 2 \n"+
@@ -152,10 +158,6 @@ public class Console {
                         // No boat yet entered
                         boatInfo(0,mIndex);
                     }
-                    else{
-                        System.out.println("hej2");
-                    }
-
                 }
                 else if(choiceToDo==3){
                     System.out.println("Enter boat type : ");
