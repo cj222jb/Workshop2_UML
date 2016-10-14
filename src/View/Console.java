@@ -34,6 +34,9 @@ public class Console {
             else if(userChoice.equals("m")){
                 createMem();
             }
+            else{
+                System.err.println("Choose one of the valid options");
+            }
         }
     }
     public void compactList(){
@@ -84,8 +87,6 @@ public class Console {
                 System.err.println("Incorrect format of length");
                 boatInfo(index, mIndex);
             }
-
-
             start.getObject().returnList().get(mIndex).changeBoat(boatArray.get(index),type,length);
         }
         else if(userChoice==2){
@@ -103,7 +104,7 @@ public class Console {
         if (userChoice==1){
             System.out.println("Enter members name : ");
             String name = scan.nextLine();
-            System.out.println("Enter members personal nr : ");
+            System.out.println("Enter members personal nr with numbers only : ");
             Long persNr = scan.nextLong();
             start.getObject().changeMem(start.getObject().returnList().get(index),name,persNr);
         }
@@ -112,12 +113,11 @@ public class Console {
             start.getObject().removeMem(start.getObject().returnList().get(index));
         }
     }
-
     public void createMem() {
 
         Scanner scan1 = new Scanner(System.in);
-
-        System.out.println("Enter members name : ");
+        boolean status = true;
+        System.out.println("Enter members name with numbers only : ");
         String name = scan1.nextLine();
         if (err.isName(name) == false) {
             System.err.println("Members name cant contain number or special characters , " +
@@ -131,8 +131,11 @@ public class Console {
                 persNr = scan1.nextLong();
             } catch (InputMismatchException e) {
                 System.err.println("Incorrect format");
+                status = false;
                 createMem();
             }
+                if(status)
+                    start.getObject().addMem(name, persNr, "");
         }
     }
 
@@ -141,7 +144,7 @@ public class Console {
         if (start.getObject().returnList().size() == 0) {
             System.out.println("There is no members yet \n");
         } else {
-            System.out.println("\nIf you want to handle the member please enter the index of the member \n" +
+            System.out.println("\nIf you want to handle the member,\nplease enter the index of the member \n" +
                     "If you want to return to the main menu press 99");
             int mIndex = scan.nextInt();
             if (mIndex == 99) {
@@ -180,7 +183,7 @@ public class Console {
                     try {
                         boatLength = scan.nextDouble();
                     } catch (InputMismatchException e) {
-                        System.err.println("Incorrect format of boat lenght");
+                        System.err.println("Incorrect format of boat length");
                         selectOrEmpty();
                     }
 
