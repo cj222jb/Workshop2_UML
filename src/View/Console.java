@@ -114,6 +114,7 @@ public class Console {
     }
 
     public void createMem() {
+
         Scanner scan1 = new Scanner(System.in);
 
         System.out.println("Enter members name : ");
@@ -132,8 +133,6 @@ public class Console {
                 System.err.println("Incorrect format");
                 createMem();
             }
-
-                start.getObject().addMem(name, persNr, "");
         }
     }
 
