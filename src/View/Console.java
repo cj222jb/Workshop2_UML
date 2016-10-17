@@ -1,12 +1,14 @@
 package View;
 import Model.Boat;
-import Model.ErrorHandling;
 import Model.Start;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by carl on 2016-09-20.
  */
@@ -14,7 +16,6 @@ import java.util.Scanner;
 public class Console {
     static Start start = new Start();
     static ArrayList<Boat> boatArray = new ArrayList<>();
-    static ErrorHandling err = new ErrorHandling();
 
 
 
@@ -129,7 +130,7 @@ public class Console {
         boolean status = true;
         System.out.println("Enter members name  : ");
         String name = scan1.nextLine();
-        if (err.isName(name) == false) {
+        if (isName(name) == false) {
             System.err.println("Members name cant contain number or special characters , " +
                     "\nneither can it be empty!\n" +
                     "Please enter again\n");
@@ -224,5 +225,18 @@ public class Console {
                 }
             }
         }
+    }
+    public static boolean isName(String name){
+        if(name.length()==0){
+            return false;
+        }
+
+        Pattern p = Pattern.compile("[^a-zA-Z ]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(name);
+        boolean b = m.find();
+        if (b==true){
+            return false;
+        }
+        return true;
     }
 }

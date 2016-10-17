@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Workshop2_UML:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Workshop2_UML_jar</output-path>
+    <root id="archive" name="Workshop2_UML.jar">
+      <element id="module-output" name="Workshop2_UML" />
+    </root>
+  </artifact>
+</component>
