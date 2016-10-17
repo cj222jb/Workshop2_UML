@@ -17,8 +17,6 @@ public class Console {
     static Start start = new Start();
     static ArrayList<Boat> boatArray = new ArrayList<>();
 
-
-
     public static void main(String[] args) throws IOException {
     start.loadFromFiles();
         startOfConsole();
@@ -59,7 +57,6 @@ public class Console {
             System.out.println("Current Index of this member :  "+(i)+"\n");
         }
     }
-
     public static void verboseList(){
 
         for (int i = 0; i <start.getObject().returnList().size() ; i++) {

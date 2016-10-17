@@ -1,8 +1,6 @@
 Run instructions:
 
-Clone repository, open "Start.java" located in "\Workshop2_UML\src\Model" in any javaprogram e.g. IntelliJ then run and compile. The user interface will then guide you.
+Clone repository, Run Workshop2_UML.jar.
 
+How to run .jar files : Enter cmd -> locate Workshop2_UML.jar example path : (C:\Users\UserName\Documents\GitHub\1dv607\Workshop2_UML) -> Type: java -jar Workshop2_UML.jar
 
-Notes:
-
-When adding or changing a boats length and you want yo use decimals use "," becuase "." won't work.
